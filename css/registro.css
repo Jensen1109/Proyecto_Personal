@@ -1,15 +1,10 @@
+@import url(custom/custompropertiers.css);
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-:root{
-    --fondo-formulario:#ffff;
-    --formulario-color:#333;
-    --fondo-formulario-input:#f0f5ff;
-    --fondo-boton:#1a1a1a;
-    --color-boton:#ffff;
-}
+
 .registro{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -41,6 +36,13 @@
     max-width: 450px;
     width: 90%;
     padding: 30px;
+    margin-top: 15px;
+}
+.formulario__etiqueta
+{
+    margin-top: 25px;
+    font-family: sans-serif;
+    font-weight: bold;
 }
 
 .formulario__etiqueta {
@@ -64,14 +66,15 @@
 
 .formulario__boton {
     background-color: var(--fondo-boton);
-    color:var(--color-boton);
+    color: var(--color-texto);
     padding: 15px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 18px;
-    margin-top: 20px;
+    margin-top: 30px;
     text-transform: uppercase;
+    margin-left: 125px;
+    border-radius: 8px;
 }
 
 .formulario__input-contenedor {
