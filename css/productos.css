@@ -1,0 +1,48 @@
+@import url(../css/custom/custompropertiers.css);
+
+body
+{
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-areas: 
+    "sidebar main"
+    ;
+    min-height: 100vh;
+}
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    grid-area: sidebar; 
+    background-color:var(--aside-fondo);
+}
+
+.main
+{
+    grid-area: main;
+    padding: 10px;
+}
+.galeria
+{
+    display: grid;
+    gap: 100px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+.producto
+{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius:8px;
+    background-color: #fff;
+    height: 300px;
+    width: 310px;
+}
+.producto__imagen
+{
+    object-fit: cover;
+    height: 130px;
+    width: 310px;
+}
