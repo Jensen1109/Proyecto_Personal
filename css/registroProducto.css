@@ -12,14 +12,34 @@ body
 header
 {
     display: flex;
-    background-color: red;
+    background-color:var(--fondo-inicio);
+    color: var(--color-texto);
 }
+
+.header__contenedor
+{
+    display: flex;  
+    justify-content: flex-start;
+    align-items: center;
+    gap: 50px;
+    margin-left: 20px;
+}
+
+.header__link
+{
+    text-decoration: none;
+    color: var(--color-texto);
+}
+.header__icono{
+    font-size: 22px;
+}
+
 
 .main
 {
     display: flex;
     flex-direction: column;
-    background-color: rgb(104, 255, 255);
+    background-color:var();
     align-items: center;
     justify-content: center;
 }
@@ -31,10 +51,12 @@ header
     display: flex;
     flex-direction: column;
     gap: 15px;
-    background-color:cornflowerblue;    
+    background-color:var(  --fondo-formulario);  
     align-items: center;
     border-radius: 8px;
     border: none;
+    box-shadow: 2px 0 8px rgb(202, 202, 202);
+    border-radius: 8px;
 }
 
 .formulario__producto
@@ -48,15 +70,22 @@ header
 
 .formulario__input
 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     width: 310px;
-    height: 45px;
+    background-color: var(--fondo-formulario-input);
+    height: 40px;
     border: none;
     gap: 10px;  
+    resize: none;
+    border-radius: 6px;
 }
 
 .formulario__boton
 {
     width: 310px;
-    height: 30px;
+    height: 40px;
     cursor: pointer;
+    color: var(--color-boton--texto);
+    background-color: var(--fondo-boton);
+    border-radius: 6px;
 }
