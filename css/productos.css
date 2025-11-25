@@ -49,6 +49,23 @@ body
     height: 300px;
     width: 310px;
 }
+
+.producto__descripcion
+{
+    text-align: justify;
+}
+.contenedor__precio
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.contenedor__iconos
+{
+    display: flex;
+    gap: 2rem;
+}
 .producto__imagen
 {
     object-fit: cover;
