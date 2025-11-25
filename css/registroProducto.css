@@ -77,9 +77,8 @@ header
     border: none;
     gap: 10px;  
     resize: none;
-    border-radius: 6px;
+    border-radius: 6px;     
 }
-
 .formulario__boton
 {
     width: 310px;
