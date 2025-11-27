@@ -1,3 +1,34 @@
 @import url(custom/custompropertiers.css);
 @import url(/css/registroProducto.css);
 
+.contenedor-tabla {
+  background-color: rgb(255, 255, 255);
+  width: 600px;
+  height: 450px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: center;
+}
+/* th {
+  border: 1px solid black;
+}
+td {
+  border: 1px solid black;
+} */
+/* 
+thead {
+  border: 1px solid black;
+}
+
+tbody {
+  border: 1px solid black;
+} */
