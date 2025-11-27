@@ -1,79 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/controlstock.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/controlstock.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <header class="header">
-        <div class="header__contenedor">
-            <a href="productos.html" class="header__link">
-            <i class="fa-solid fa-arrow-left  header__icono" ></i>
-            </a>
-            <h2 class="header__titulo">Stock de productos</h2>
-        </div>
+      <div class="header__contenedor">
+        <a href="productos.html" class="header__link">
+          <i class="fa-solid fa-arrow-left header__icono"></i>
+        </a>
+        <h2 class="header__titulo">Stock de productos</h2>
+      </div>
     </header>
     <main class="main">
+      <table class="">
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Stock actual</th>
+            <th>Stock minmo</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
 
-        <table class="">
-            
-            <thead>
+        <tbody>
+          <tr>
+            <td>Papa criolla</td>
+            <td>150</td>
+            <td>50</td>
+            <td>Suficiente</td>
+          </tr>
 
-                <tr>
-                        <th>Producto</th>
-                        <th>Stock actual </th>
-                        <th>Stock minmo</th>
-                        <th>Estado</th>
-                </tr>
+          <tr>
+            <td>Tomate</td>
+            <td>15</td>
+            <td>30</td>
+            <td>Bajo</td>
+          </tr>
 
-            </thead>
+          <tr>
+            <td>Jamon</td>
+            <td>5</td>
+            <td>50</td>
+            <td>Critico</td>
+          </tr>
 
-            <tbody>
-
-                <tr>
-
-                    <td>Papa criolla</td>
-                    <td>150</td>
-                    <td>50</td>
-                    <td>Suficiente</td>
-
-                </tr>
-
-                <tr>
-
-                    <td>Tomate</td>
-                    <td>15</td>
-                    <td>30</td>
-                    <td>Bajo</td>
-
-                </tr>
-
-                <tr>
-
-                    <td>Jamon</td>
-                    <td>5</td>
-                    <td>50</td>
-                    <td>Critico</td>
-
-                </tr>
-
-                <tr>
-
-                    <td>Manzanas</td>
-                    <td>70</td>
-                    <td>50</td>
-                    <td>Suficiente</td>
-
-                </tr>
-
-
-            </tbody>
-
-        </table>
-
+          <tr>
+            <td>Manzanas</td>
+            <td>70</td>
+            <td>50</td>
+            <td>Suficiente</td>
+          </tr>
+        </tbody>
+      </table>
     </main>
-</body>
+  </body>
 </html>
