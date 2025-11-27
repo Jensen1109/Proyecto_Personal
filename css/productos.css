@@ -1,74 +1,70 @@
 @import url(../css/custom/custompropertiers.css);
 
-body
-{
-    display: grid;
-    grid-template-columns: 250px 1fr;
-    grid-template-areas: 
-    "sidebar main"
-    ;
-    min-height: 100vh;
-}    
-.sidebar{
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    grid-area: sidebar; 
-    background-color:var(--aside-fondo);
+body {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-template-areas: "sidebar main";
+  min-height: 100vh;
+}
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  grid-area: sidebar;
+  height: 100vh;
+  width: 250px;
+  background-color: var(--aside-fondo);
+  position: fixed;
 }
 
-
-    .sidebar__link
-    {
-        color:var(--aside-links);
-        text-decoration: none;
-        margin-top: 29px;
-        cursor: pointer;
-    }
-
-.main
-{
-    grid-area: main;
-    padding: 10px;
-}
-.galeria
-{
-    display: grid;
-    gap: 100px;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-}
-.producto
-{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    border: 1px solid #ccc;
-    padding: 1rem;
-    border-radius:8px;
-    background-color: var(--fondo-main);
-    height: 300px;
-    width: 310px;
+.sidebar__link {
+  color: var(--aside-links);
+  text-decoration: none;
+  margin-top: 29px;
+  cursor: pointer;
+  padding: 10px;
 }
 
-.producto__descripcion
-{
-    text-align: justify;
+.main {
+  grid-area: main;
+  padding: 10px;
 }
-.contenedor__precio
-{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+.galeria {
+  display: grid;
+  gap: 100px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
-.contenedor__iconos
-{
-    display: flex;
-    gap: 2rem;
+.producto {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: var(--fondo-main);
+  height: 300px;
+  width: 310px;
 }
-.producto__imagen
-{
-    object-fit: cover;
-    height: 130px;
-    width: 310px;
+
+.producto__descripcion {
+  text-align: justify;
+}
+.contenedor__precio {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.contenedor__iconos {
+  display: flex;
+  gap: 2rem;
+}
+.producto__imagen {
+  object-fit: cover;
+  height: 130px;
+  width: 310px;
+}
+.sidebar__link:hover {
+  background-color: dodgerblue;
+  transition: 1s;
 }
