@@ -1,69 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/controlstock.css" />
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
-    <title>Document</title>
-  </head>
-  <body>
-    <header class="header">
-      <div class="header__contenedor">
+    <title>Control de stock</title>
+</head>
+<body>
+<header class="header">
+
+    <div class="header__contenedor">
         <a href="productos.html" class="header__link">
-          <i class="fa-solid fa-arrow-left header__icono"></i>
+        <i class="fa-solid fa-arrow-left header__icono"></i>
         </a>
         <h2 class="header__titulo">Stock de productos</h2>
-      </div>
-    </header>
-    <main class="main">
-      <div>
-        <p>Tabla Stock</p>
-      </div>
-      <table class="contenedor-tabla">
-        <thead>
-          <tr>
-            <th>Producto</th>
-            <th>Stock actual</th>
-            <th>Stock minmo</th>
-            <th>Estado</th>
-          </tr>
-        </thead>
+    </div>
+    
+</header>
 
-        <tbody>
-          <tr>
-            <td>Papa criolla</td>
-            <td>150</td>
-            <td>50</td>
+<main class="main">
+        <div class="stock-card">
+            <h3 class="stock-card_titulo">Tabla stock</h3>
+        
 
-            <td>Suficiente</td>
-          </tr>
+            <div class="stock-card__control">
+                <button class="control-button control-button--filtrar">
+                    filtrar
+                </button>
 
-          <tr>
-            <td>Tomate</td>
-            <td>15</td>
-            <td>30</td>
-            <td>Bajo</td>
-          </tr>
+                <div class="stock-card_search">
+                    <i class="fa-solid fa-magnifying-glass search__icon"></i>
+                </div>
 
-          <tr>
-            <td>Jamon</td>
-            <td>5</td>
-            <td>50</td>
-            <td>Critico</td>
-          </tr>
+                <button class="control-button control-button--editar">
+                        Editar
+                    <i class="fa-solid fa-pen-to-square edit__icon"></i>
+                </button>
+            </div>
 
-          <tr>
-            <td>Manzanas</td>
-            <td>70</td>
-            <td>50</td>
-            <td>Suficiente</td>
-          </tr>
-        </tbody>
-      </table>
+            <table class="contenedor-tabla">
+                <thead>
+                    <tr>
+                        <th class="tabla__header">Producto</th>
+                        <th class="tabla__header">Stock actual</th>
+                        <th class="tabla__header">Stock minmo</th>
+                        <th class="tabla__header ">Estado</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr class="tabla__row">
+                        <td class="tabla__data">Papa criolla</td>
+                        <td class="tabla__data">150</td>
+                        <td class="tabla__data">50</td>
+                        <td class="tabla__data estado--suficiente">Suficiente</td>
+                    </tr>
+
+                    <tr class="tabla__row">
+                        <td class="tabla__data">Tomate</td>
+                        <td class="tabla__data">15</td>
+                        <td class="tabla__data">30</td>
+                        <td class="tabla__data estado--bajo">Bajo</td>
+                    </tr>
+
+                    <tr class="tabla__row">
+                        <td class="tabla__data">Jamon</td>
+                        <td class="tabla__data">5</td>
+                        <td class="tabla__data">50</td>
+                        <td class="tabla__data estado--critico">Critico</td>
+                    </tr>
+
+                    <tr class="tabla__row"> 
+                        <td class="tabla__data">Manzanas</td>
+                        <td class="tabla__data">70</td>
+                        <td class="tabla__data">50</td>
+                        <td class="tabla__data estado--suficiente">Suficiente</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </main>
-  </body>
+    </body>
 </html>
