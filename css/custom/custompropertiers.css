@@ -10,4 +10,8 @@
     --color-texto:#f4f7f6;
     --aside-fondo:#EEF5FF;
     --aside-links:#170d9b;
+    --color-card-background: #ffffff; /* Fondo de la tarjeta blanca */
+    --color-border: #dfe6e9; /* Color de los bordes de la tabla/controles */
+    --color-text-dark: #34495e; /* Texto principal */
+    --color-text-light: #7f8c8d; /* Íconos y texto claro */
 }   
