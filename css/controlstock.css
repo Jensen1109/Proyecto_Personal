@@ -1,7 +1,14 @@
 @import url(custom/custompropertiers.css);
 @import url(/css/registroProducto.css);
 
-.contenedor-tabla {
+
+:root
+{
+  --color-low: #f39c12;       /* Naranja para estado Bajo */
+    --color-critical: #e74c3c;  /* Rojo para estado Crítico */
+    --color-sufficient: #2ecc71;/* Verde para estado Suficiente */
+}
+/* .contenedor-tabla {
   background-color: rgb(255, 255, 255);
   width: 600px;
   height: 450px;
@@ -17,18 +24,157 @@ td {
   border: 1px solid black;
   padding: 8px;
   text-align: center;
-}
-/* th {
-  border: 1px solid black;
-}
-td {
-  border: 1px solid black;
 } */
-/* 
-thead {
-  border: 1px solid black;
+
+main{
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+.stock-card{
+  background-color: var();
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px  rgba(0, 0, 0, 0.1);
+  width: 95%;
+  min-width: 700px;
 }
 
-tbody {
-  border: 1px solid black;
+.stock-card_titulo
+{
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.stock-card__control
+{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.control-button--filtrar
+{
+  margin-right: auto; 
+    padding: 0.5rem 0.8rem;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f7f7f7;
+}
+
+.search__icon {
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+}
+
+.control-button {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+
+/* .control-button--filtrar {
+    background-color: white;
+    color: var(--color-text-dark);
+    border: 1px solid #ccc;
+    padding-right: 0.8rem;
 } */
+.control-button--filtrar:hover {
+    background-color: #f0f0f0;
+}
+
+
+.control-button--editar{
+    background-color: black;
+    color: rgb(240, 240, 240);
+    border: none;
+    padding-right: 0.5rem;
+    padding-left: 0.8rem;
+}
+.control-button--editar:hover {
+    background-color: #1a2b3c;
+}
+
+.edit__icon {
+    font-size: 1rem;
+    padding-left: 0.5rem;
+
+    border-left: 1px solid rgba(255, 255, 255, 0.2); 
+    line-height: 1;
+}
+
+
+
+.contenedor-tabla{
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid black;
+    overflow: hidden; 
+}
+
+
+.contenedor-tabla thead {
+    background-color: #ecf0f1;
+    color: #333;
+}
+
+.contenedor-tabla th {
+    padding: 0.8rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    font-weight: 600;
+}
+
+
+.contenedor-tabla th:last-child {
+    border-right: none;
+}
+
+
+.contenedor-tabla td {
+    padding: 0.8rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    color: #555;
+}
+
+
+.contenedor-tabla td:last-child {
+    border-right: none;
+}
+
+.contenedor-tabla tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+.estado--suficiente {
+    color:var(--color-sufficient);
+    font-weight: 600;
+}
+
+.estado--bajo{
+    color:var(--color-low);
+    font-weight: 600;
+}
+
+.estado--critico{
+    color:var(--color-critical);
+    font-weight: 600;
+}
