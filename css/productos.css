@@ -5,16 +5,22 @@ body {
   grid-template-columns: 250px 1fr;
   grid-template-areas: "sidebar main";
   min-height: 100vh;
+  margin: 0;
+  overflow-x: 0;
 }
 .sidebar {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   grid-area: sidebar;
-  height: 100vh;
+  height: 100vh; 
   width: 250px;
   background-color: var(--aside-fondo);
   position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  overflow-y: auto;
 }
 
 .sidebar__link {
@@ -27,23 +33,27 @@ body {
 
 .main {
   grid-area: main;
-  padding: 10px;
+  padding: 30px;
+  overflow-y: auto;
 }
 .galeria {
   display: grid;
-  gap: 100px;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 25px;
+  
+  grid-template-columns: repeat(auto-fit, minmax(calc(100% / 3 - 25px), 1fr));
 }
 .producto {
   display: flex;
   align-items: center;
   flex-direction: column;
-  border: 1px solid #ccc;
   padding: 1rem;
   border-radius: 8px;
   background-color: var(--fondo-main);
-  height: 300px;
-  width: 310px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5 );
+  border: none;
+  overflow: hidden;
+  /* height: 300px;
+  width: 310px; */
 }
 
 .producto__descripcion {
