@@ -23,11 +23,11 @@
 </header>
 
 <main class="main">
-        
-    <div class="registro-venta">
+        <section>
+        <div class="registro-venta">
 
     <div class="registro-venta__formulario">
-        <h3>Nombre del cliente</h3>
+        <h3 class="registro-venta__label">Nombre del cliente</h3>
         <input type="text" class="registro-venta__input" name="nombre" id="nombre" placeholder="Ej: Cristiano Ronaldo">
     </div>
 
@@ -38,7 +38,7 @@
 
     <table class="contenedor-tabla">
 
-        <thead class="">
+        <thead class="registro-venta__tabla">
             <tr>
                 <th class="registro-venta__columna ">Cantidad</th>
                 <th class="registro-venta__columna ">Descripcion</th>
@@ -47,9 +47,9 @@
             </tr>
         </thead>
 
-        <tbody>
+        <tbody class="registro-venta__tabla-body">
 
-            <tr>
+            <tr class="registro-venta__item">
                 <td class="registro-venta__valor">12 kg</td>
                 <td class="registro-venta__valor">Papa</td>
                 <td class="registro-venta__valor">$ 3.000</td>
@@ -61,7 +61,7 @@
 
         <tbody>
 
-            <tr>
+            <tr class="registro-venta__item">
                 <td class="registro-venta__valor">12</td>
                 <td class="registro-venta__valor">Manzana</td>
                 <td class="registro-venta__valor">$ 1.000</td>
@@ -72,7 +72,9 @@
         </tbody>
 
     </table>
+    </section>
 
+    <section>
     <div class="registro-venta__resumen">
 
         <div class="registro-venta__resumen-box">
@@ -96,8 +98,8 @@
                 <button class="registro-venta__btn-guardar">Guardar venta</button>
                 <button class="registro-venta__btn-imprimir">Imprimir ticket</button>
             </div>
-
     </div>
+    </section>
 
     </div>
 </main>
