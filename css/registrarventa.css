@@ -1,3 +1,12 @@
 @import url(custom/custompropertiers.css);
 @import url(/css/registroProducto.css);
 
+.registro-venta
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5 );
+    height: 650px;
+    width: 900px;
+}
