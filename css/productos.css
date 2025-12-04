@@ -63,6 +63,7 @@ body {
   width: 310px; */
 }
 
+
 .producto__descripcion {
   text-align: justify;
 }
@@ -84,4 +85,10 @@ body {
 .sidebar__link:hover {
   background-color: dodgerblue;
   transition: 1s;
+}
+
+.producto:hover
+{
+  transform: translateY(-5px);
+  /* background-color: rgb(244, 246, 247); */
 }
