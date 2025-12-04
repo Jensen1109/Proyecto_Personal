@@ -1,7 +1,7 @@
 @import url(custom/custompropertiers.css);
 @import url(/css/registroProducto.css);
 
-.registro-venta
+/* .registro-venta
 {
     display: flex;
     align-items: center;
@@ -9,4 +9,121 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5 );
     height: 650px;
     width: 900px;
-}   
+}   */
+
+main
+{
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+
+.registro-venta
+{
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5 );
+    height: 650px;
+    width: 900px;
+    display: grid;
+    grid-template-columns: 75% 25%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    padding: 30px;
+    gap:30px;
+}
+
+.registro-venta__formulario
+{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.registro-venta__input
+{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    /* height: 28px;
+    width: 500px; */
+}
+.registro-venta__label
+{
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-family:'Courier New', Courier, monospace;
+}
+
+.registro-venta__busqueda
+{
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px 10px;
+    margin-bottom: 20px;
+}
+
+.registro-venta__icono-busqueda
+{
+    margin-right: 10px;
+}
+.registro-venta__input-busqueda
+{
+    color: #999;
+    margin-right: 10px;
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+
+.registro-venta__item
+{
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+    flex-grow: 1;
+}
+
+.registro-venta__tabla
+{
+    width: 100%;
+    border-collapse: collapse ;
+    table-layout: fixed;
+    background-color:var(--aside-fondo);
+}
+.registro-venta__tabla-head tr,.registro-venta__item{
+    display: grid;
+    grid-template-columns: 80px 1fr 100px 100px 30px;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.registro-venta__tabla-head th{
+padding: 10px;
+background-color: #ecf0f1;
+text-align: left;
+}
+
+.registro-venta__tabla-body tr{
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.registro-venta__item td
+{
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding: 0 10px;
+}
+
+.registro-venta__valor
+{
+    justify-content: flex-end;
+}
+
+
