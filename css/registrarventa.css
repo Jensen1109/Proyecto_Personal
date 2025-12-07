@@ -11,25 +11,23 @@
     width: 900px;
 }   */
 
-main
-{
+main {
     display: flex;
     justify-content: center;
     padding: 30px;
 }
 
-.columna-izquierda
-{
+.columna-izquierda {
     padding: 30px;
 }
-.columna-derecha
-{
+
+.columna-derecha {
     padding: 20px;
 }
-.registro-venta
-{
+
+.registro-venta {
     justify-content: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5 );
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     height: 650px;
     width: 900px;
     display: grid;
@@ -37,18 +35,17 @@ main
     background-color: rgb(255, 255, 255);
     border-radius: 8px;
     padding: 30px;
-    gap:30px;
+    gap: 30px;
 }
 
-.registro-venta__formulario
-{
+.registro-venta__formulario {
     font-family: 'Courier New', Courier, monospace;
     font-size: 20px;
     display: flex;
     flex-direction: column;
 }
-.registro-venta__input
-{
+
+.registro-venta__input {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
@@ -58,15 +55,14 @@ main
     /* height: 28px;
     width: 500px; */
 }
-.registro-venta__label
-{
+
+.registro-venta__label {
     font-size: 1.2rem;
     margin-bottom: 10px;
-    font-family:'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace;
 }
 
-.registro-venta__busqueda
-{
+.registro-venta__busqueda {
     display: flex;
     align-items: center;
     border: 1px solid #ccc;
@@ -75,12 +71,11 @@ main
     margin-bottom: 20px;
 }
 
-.registro-venta__icono-busqueda
-{
+.registro-venta__icono-busqueda {
     margin-right: 10px;
 }
-.registro-venta__input-busqueda
-{
+
+.registro-venta__input-busqueda {
     color: #999;
     margin-right: 10px;
     border: none;
@@ -88,8 +83,7 @@ main
     height: 100%;
 }
 
-.registro-venta__item
-{
+.registro-venta__item {
     border: 1px solid #ccc;
     border-radius: 4px;
     overflow: hidden;
@@ -97,74 +91,94 @@ main
     width: 500px;
 }
 
-.contenedor-tabla
-{
+.contenedor-tabla {
     width: 100%;
-    max-height: 450px;   
-    overflow-y: auto;    /* scroll vertical */
-    overflow-x: hidden;  /* evita scroll horizontal innecesario */
+    max-height: 450px;
+    overflow-y: auto;
+    /* scroll vertical */
+    overflow-x: hidden;
+    /* evita scroll horizontal innecesario */
     border: 1px solid #ccc;
     border-radius: 4px;
-    display: block; 
+    display: block;
 }
-.contenedor-tabla thead
-{
+
+.contenedor-tabla thead {
     position: sticky;
     top: 0;
     background-color: #ecf0f1;
     z-index: 2;
 }
-.registro-venta__columna
-{
+
+.registro-venta__columna {
     display: flex;
     justify-content: space-around;
 }
-.registro-venta__tabla
-{
+
+.registro-venta__tabla {
     width: 100%;
-    border-collapse: collapse ;
+    border-collapse: collapse;
     table-layout: fixed;
-    background-color:var(--aside-fondo);
+    background-color: var(--aside-fondo);
 }
-.registro-venta__tabla-head tr,.registro-venta__item{
+
+.registro-venta__tabla-head tr,
+.registro-venta__item {
     display: grid;
-    grid-template-columns: 80px 1fr 100px 100px 30px;
+    grid-template-columns: 70px 1fr 90px 90px 60px;
     align-items: center;
     padding: 10px 0;
 }
 
-.registro-venta__tabla-head th{
-padding: 10px;
-background-color: #ecf0f1;
-text-align: left;
+.registro-venta__tabla-head th {
+    padding: 10px;
+    background-color: #ecf0f1;
+    text-align: left;
 }
 
-.registro-venta__tabla-body tr{
+.registro-venta__tabla-body tr {
     border-bottom: 1px solid #f0f0f0;
 }
 
-.registro-venta__item td
-{
+.registro-venta__item td {
     display: flex;
     align-items: center;
     text-align: left;
     padding: 0 10px;
 }
 
-.registro-venta__valor
-{
+.registro-venta__valor {
     justify-content: space-around;
 }
-.registro-venta__icono-borrar
-{
-    margin: 0 auto;
+
+.registro-venta__icono-editar,
+.registro-venta__icono-borrar {
+    cursor: pointer;
+    font-size: 14px;
+    padding: 4px;
 }
 
-.registro-venta__resumen-box
-{
+.registro-venta__icono-editar {
+    color: #3498db;
+    margin-right: 8px;
+}
+
+.registro-venta__icono-editar:hover {
+    color: #2980b9;
+}
+
+.registro-venta__icono-borrar {
+    color: #e74c3c;
+}
+
+.registro-venta__icono-borrar:hover {
+    color: #c0392b;
+}
+
+.registro-venta__resumen-box {
     display: flex;
-    flex-direction: column ;
-    justify-content:space-around;
+    flex-direction: column;
+    justify-content: space-around;
     gap: 20px;
     margin-top: 128px;
     border: 1px solid #000000;
@@ -173,41 +187,40 @@ text-align: left;
     padding: 10px;
     width: 200px;
     font-size: 19px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5 );
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-.registro-venta__linea-total{
+.registro-venta__linea-total {
     display: flex;
     justify-content: space-between;
 }
 
-.registro-venta__fiado
-{
+.registro-venta__fiado {
     display: flex;
     gap: 20px;
     align-items: center;
 }
-.registrarventa__checkbox
-{
+
+.registrarventa__checkbox {
     width: 20px;
     height: 50px;
 }
-.registrarventa__texto
-{
+
+.registrarventa__texto {
     font-size: 19px;
 }
-.registro-venta__btn-historial
-{   
+
+.registro-venta__btn-historial {
     width: 80%;
     margin: 0 auto;
     padding: 10px;
     border-radius: 5px;
     border: none;
     background-color: #C4DCFF;
+    cursor: pointer;
 }
 
-.registro-venta__acciones-finales
-{
+.registro-venta__acciones-finales {
     margin-top: 80px;
     display: flex;
     flex-direction: column;
@@ -216,8 +229,7 @@ text-align: left;
     justify-content: center;
 }
 
-.registro-venta__btn-guardar
-{
+.registro-venta__btn-guardar {
     width: 100%;
     height: 50px;
     margin: 0 auto;
@@ -227,15 +239,18 @@ text-align: left;
     background-color: #2C3E50;
     color: white;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
-.registro-venta__btn-imprimir
-{
+.registro-venta__btn-imprimir {
     width: 100%;
     margin: 0 auto;
     padding: 10px;
     border-radius: 5px;
     border: none;
-    background-color: #C4DCFF;
+    background-color: transparent;
     height: 50px;
+    border: 1px solid black;
+    cursor: pointer;
+    /* background-color: C4DCFF; */
 }
