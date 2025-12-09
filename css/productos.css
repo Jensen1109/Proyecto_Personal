@@ -17,13 +17,17 @@ body {
   grid-area: sidebar;
   height: 100vh;
   width: 250px;
-  background-color: var(--aside-fondo);
+  background-color: var(--fondo-sidebar);
   position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
   overflow-y: auto;
   transition: transform 0.3s ease;
+}
+.sidebar__titulo
+{
+  color: white;
 }
 
 .contenedor__sidebar {
@@ -33,7 +37,7 @@ body {
 }
 
 .sidebar__link {
-  color: var(--aside-links);
+  color: var(--color-texto);
   text-decoration: none;
   margin-top: 29px;
   cursor: pointer;
