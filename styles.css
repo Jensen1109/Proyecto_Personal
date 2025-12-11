@@ -11,3 +11,6 @@
 /* ==================== COMPONENTES REUTILIZABLES ==================== */
 /* Componente de ventana emergente (modal) */
 @import url(/css/componentes/ventanaemergente.css);
+
+/* Componente de menú hamburguesa para móvil */
+@import url(/css/componentes/menu-hamburguesa.css);
