@@ -263,6 +263,7 @@ body {
   /* Flexbox */
   gap: 12px;
   /* Espacio entre iconos */
+
 }
 
 /* Cada icono de acción (editar, borrar) */
@@ -289,16 +290,20 @@ body {
   /* Animación suave */
 }
 
-/* Efecto hover en los iconos */
-.producto__icono:hover {
-  background-color: #3498db;
-  /* Fondo azul */
+/* Icono de editar - fondo azul */
+.producto__icono .fa-pencil {
   color: white;
-  /* Icono blanco */
 }
 
-/* Tamaño del icono FontAwesome dentro del botón */
-.producto__icono i {
-  font-size: 0.9rem;
-  /* Tamaño del icono */
+.producto__icono:has(.fa-pencil) {
+  background-color: #3498db;
+}
+
+/* Icono de eliminar - fondo rojo */
+.producto__icono .fa-trash {
+  color: white;
+}
+
+.producto__icono:has(.fa-trash) {
+  background-color: #e74c3c;
 }
