@@ -1,0 +1,257 @@
+/* ==================== MEDIA QUERIES ==================== */
+
+/* Tablet (menos de 991px) */
+@media screen and (max-width: 991px) {
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-height: auto;
+        padding: 10px 0;
+    }
+
+    .contenedor__sidebar {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 0 15px;
+        gap: 5px;
+    }
+
+    .sidebar__titulo-principal {
+        font-size: 1.2rem;
+        padding: 10px;
+        margin-bottom: 0;
+    }
+
+    .sidebar__back {
+        padding: 10px;
+    }
+
+    .sidebar__link {
+        padding: 10px 15px;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    .historial-venta {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        min-height: auto;
+        padding: 20px;
+    }
+}
+
+/* Celular (menos de 768px) */
+@media screen and (max-width: 768px) {
+    .sidebar {
+        padding: 8px 0;
+    }
+
+    .contenedor__sidebar {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0 10px;
+        gap: 0;
+        overflow-x: auto;
+    }
+
+    .sidebar__back {
+        padding: 8px 10px;
+        font-size: 1rem;
+        flex-shrink: 0;
+    }
+
+    .sidebar__titulo-principal {
+        font-size: 1rem;
+        padding: 8px 10px;
+        margin-bottom: 0;
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+
+    .sidebar__titulo-principal br {
+        display: none;
+    }
+
+    .sidebar__link {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    .historial-venta {
+        width: 100%;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .historial-venta__busqueda {
+        padding: 10px 12px;
+    }
+
+    .historial-venta__input-busqueda {
+        font-size: 14px;
+    }
+
+    /* Tabla como cards en móvil */
+    .contenedor-tabla {
+        overflow: visible;
+        max-height: none;
+        border: none;
+    }
+
+    .historial-venta__tabla-head {
+        display: none;
+    }
+
+    .historial-venta__tabla-body {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .historial-venta__item {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        padding: 15px;
+        border: 1px solid #eee;
+        border-radius: 12px;
+        background-color: #fff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .historial-venta__valor {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 5px 0;
+        text-align: left;
+    }
+
+    .historial-venta__valor::before {
+        content: attr(data-label);
+        font-weight: 600;
+        font-size: 0.75rem;
+        color: #888;
+        margin-bottom: 4px;
+        text-transform: uppercase;
+    }
+
+    /* Estado ocupa toda la fila */
+    .historial-venta__estado--completado,
+    .historial-venta__estado--pendiente {
+        grid-column: 1 / -1;
+        text-align: center;
+        padding: 8px;
+        border-radius: 6px;
+        margin-top: 5px;
+    }
+
+    .historial-venta__estado--completado {
+        background-color: rgba(39, 174, 96, 0.1);
+    }
+
+    .historial-venta__estado--pendiente {
+        background-color: rgba(230, 126, 34, 0.1);
+    }
+}
+
+/* Celular pequeño (menos de 425px) */
+@media screen and (max-width: 425px) {
+    .contenedor__sidebar {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .sidebar__back {
+        order: -1;
+        width: auto;
+    }
+
+    .sidebar__titulo-principal {
+        order: -1;
+        flex-grow: 1;
+        text-align: left;
+    }
+
+    .sidebar__link {
+        padding: 6px 10px;
+        font-size: 0.85rem;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    .historial-venta {
+        padding: 12px;
+        border-radius: 12px;
+        gap: 12px;
+    }
+
+    .historial-venta__busqueda {
+        padding: 8px 10px;
+    }
+
+    .historial-venta__input-busqueda {
+        font-size: 13px;
+    }
+
+    .historial-venta__item {
+        padding: 12px;
+        gap: 8px;
+    }
+
+    .historial-venta__valor {
+        font-size: 0.9rem;
+    }
+}
+
+/* Celular muy pequeño (menos de 375px) */
+@media screen and (max-width: 375px) {
+    .contenedor__sidebar {
+        padding: 0 8px;
+    }
+
+    .sidebar__titulo-principal {
+        font-size: 0.9rem;
+        padding: 6px 8px;
+    }
+
+    .sidebar__link {
+        padding: 5px 8px;
+        font-size: 0.8rem;
+    }
+
+    main {
+        padding: 8px;
+    }
+
+    .historial-venta {
+        padding: 10px 8px;
+    }
+
+    .historial-venta__item {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+
+    .historial-venta__valor {
+        font-size: 0.85rem;
+    }
+}
