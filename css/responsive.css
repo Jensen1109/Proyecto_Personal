@@ -1,0 +1,179 @@
+/* ========================================
+   RESPONSIVE - SOLO PARA PÁGINA DE INICIO (INDEX)
+   ========================================
+   Breakpoints:
+   - Desktop Grande: > 1440px
+   - Laptop L: <= 1440px
+   - Laptop: <= 1024px
+   - Tablet: <= 768px
+   - Mobile L: <= 425px
+   - Mobile M: <= 375px
+   - Mobile S: <= 320px
+   ======================================== */
+
+/* ========================================
+   DESKTOP GRANDE (> 1440px)
+   ======================================== */
+@media screen and (min-width: 1441px) {
+
+    .contenedor-enlaces__registro,
+    .boton {
+        width: 700px;
+        height: 85px;
+        font-size: 24px;
+    }
+
+    .main__logo {
+        width: 400px;
+        height: 170px;
+    }
+}
+
+/* ========================================
+   LAPTOP L (max-width: 1440px)
+   ======================================== */
+@media screen and (max-width: 1440px) {
+
+    .contenedor-enlaces__registro,
+    .boton {
+        width: 600px;
+        height: 78px;
+        font-size: 22px;
+    }
+}
+
+/* ========================================
+   LAPTOP (max-width: 1024px)
+   ======================================== */
+@media screen and (max-width: 1024px) {
+
+    .contenedor-enlaces__registro,
+    .boton {
+        width: 500px;
+        height: 70px;
+        font-size: 20px;
+    }
+
+    .main__logo {
+        width: 320px;
+        height: 130px;
+    }
+
+    .contenedor-enlaces {
+        gap: 60px;
+    }
+
+    .contenedor-botones {
+        gap: 60px;
+    }
+}
+
+/* ========================================
+   TABLET (max-width: 768px)
+   ======================================== */
+@media screen and (max-width: 768px) {
+
+    .contenedor-enlaces__registro,
+    .boton {
+        width: 400px;
+        height: 65px;
+        font-size: 18px;
+    }
+
+    .main__logo {
+        width: 280px;
+        height: 120px;
+    }
+
+    .contenedor-enlaces {
+        gap: 50px;
+    }
+
+    .contenedor-botones {
+        gap: 50px;
+    }
+}
+
+/* ========================================
+   MOBILE L (max-width: 425px)
+   ======================================== */
+@media screen and (max-width: 425px) {
+
+    .contenedor-enlaces__registro,
+    .boton {
+        width: 90%;
+        max-width: 380px;
+        height: 60px;
+        font-size: 16px;
+    }
+
+    .main__logo {
+        width: 250px;
+        height: 100px;
+    }
+
+    .contenedor-enlaces {
+        gap: 40px;
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    .contenedor-botones {
+        gap: 40px;
+    }
+}
+
+/* ========================================
+   MOBILE M (max-width: 375px)
+   ======================================== */
+@media screen and (max-width: 375px) {
+
+    .contenedor-enlaces__registro,
+    .boton {
+        width: 90%;
+        max-width: 340px;
+        height: 55px;
+        font-size: 15px;
+    }
+
+    .main__logo {
+        width: 220px;
+        height: 90px;
+    }
+
+    .contenedor-enlaces {
+        gap: 35px;
+    }
+
+    .contenedor-botones {
+        gap: 35px;
+    }
+}
+
+/* ========================================
+   MOBILE S (max-width: 320px)
+   ======================================== */
+@media screen and (max-width: 320px) {
+
+    .contenedor-enlaces__registro,
+    .boton {
+        width: 95%;
+        max-width: 290px;
+        height: 50px;
+        font-size: 14px;
+        border-radius: 12px;
+    }
+
+    .main__logo {
+        width: 180px;
+        height: 75px;
+    }
+
+    .contenedor-enlaces {
+        gap: 30px;
+    }
+
+    .contenedor-botones {
+        gap: 30px;
+    }
+}
