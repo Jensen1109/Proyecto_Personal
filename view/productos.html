@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/productos.css">
     <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../css/custom/productos-mediaqueries.css">
+    <link rel="stylesheet" href="../css/componentes/ventanaemergente.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>Productos</title>
 </head>
@@ -78,7 +79,8 @@
                         <div class="contenedor__iconos">
                             <a href="editarproducto.html" class="producto__icono" title="Editar"><i
                                     class="fa-solid fa-pencil"></i></a>
-                            <a href="#" class="producto__icono" title="Eliminar"><i class="fa-solid fa-trash"></i></a>
+                            <a href="#modal-eliminar-1" class="producto__icono" title="Eliminar"><i
+                                    class="fa-solid fa-trash"></i></a>
                         </div>
                     </div>
                 </div>
@@ -94,7 +96,8 @@
                         <div class="contenedor__iconos">
                             <a href="editarproducto.html" class="producto__icono" title="Editar"><i
                                     class="fa-solid fa-pencil"></i></a>
-                            <a href="#" class="producto__icono" title="Eliminar"><i class="fa-solid fa-trash"></i></a>
+                            <a href="#modal-eliminar-2" class="producto__icono" title="Eliminar"><i
+                                    class="fa-solid fa-trash"></i></a>
                         </div>
                     </div>
                 </div>
@@ -110,7 +113,8 @@
                         <div class="contenedor__iconos">
                             <a href="editarproducto.html" class="producto__icono" title="Editar"><i
                                     class="fa-solid fa-pencil"></i></a>
-                            <a href="#" class="producto__icono" title="Eliminar"><i class="fa-solid fa-trash"></i></a>
+                            <a href="#modal-eliminar-3" class="producto__icono" title="Eliminar"><i
+                                    class="fa-solid fa-trash"></i></a>
                         </div>
                     </div>
                 </div>
@@ -127,7 +131,8 @@
                         <div class="contenedor__iconos">
                             <a href="editarproducto.html" class="producto__icono" title="Editar"><i
                                     class="fa-solid fa-pencil"></i></a>
-                            <a href="#" class="producto__icono" title="Eliminar"><i class="fa-solid fa-trash"></i></a>
+                            <a href="#modal-eliminar-4" class="producto__icono" title="Eliminar"><i
+                                    class="fa-solid fa-trash"></i></a>
                         </div>
                     </div>
                 </div>
@@ -143,7 +148,8 @@
                         <div class="contenedor__iconos">
                             <a href="editarproducto.html" class="producto__icono" title="Editar"><i
                                     class="fa-solid fa-pencil"></i></a>
-                            <a href="#" class="producto__icono" title="Eliminar"><i class="fa-solid fa-trash"></i></a>
+                            <a href="#modal-eliminar-5" class="producto__icono" title="Eliminar"><i
+                                    class="fa-solid fa-trash"></i></a>
                         </div>
                     </div>
                 </div>
@@ -159,7 +165,8 @@
                         <div class="contenedor__iconos">
                             <a href="editarproducto.html" class="producto__icono" title="Editar"><i
                                     class="fa-solid fa-pencil"></i></a>
-                            <a href="#" class="producto__icono" title="Eliminar"><i class="fa-solid fa-trash"></i></a>
+                            <a href="#modal-eliminar-6" class="producto__icono" title="Eliminar"><i
+                                    class="fa-solid fa-trash"></i></a>
                         </div>
                     </div>
                 </div>
@@ -175,11 +182,13 @@
                         <div class="contenedor__iconos">
                             <a href="editarproducto.html" class="producto__icono" title="Editar"><i
                                     class="fa-solid fa-pencil"></i></a>
-                            <a href="#" class="producto__icono" title="Eliminar"><i class="fa-solid fa-trash"></i></a>
+                            <a href="#modal-eliminar-7" class="producto__icono" title="Eliminar"><i
+                                    class="fa-solid fa-trash"></i></a>
                         </div>
                     </div>
                 </div>
-            </article><article class="producto">
+            </article>
+            <article class="producto">
                 <img src="../assets/img/harvest-7458975_1280.jpg" class="producto__imagen" alt="Manzana">
                 <div class="producto__contenido">
                     <h2 class="producto__titulo">Manzana</h2>
@@ -189,7 +198,8 @@
                         <div class="contenedor__iconos">
                             <a href="editarproducto.html" class="producto__icono" title="Editar"><i
                                     class="fa-solid fa-pencil"></i></a>
-                            <a href="#" class="producto__icono" title="Eliminar"><i class="fa-solid fa-trash"></i></a>
+                            <a href="#modal-eliminar-8" class="producto__icono" title="Eliminar"><i
+                                    class="fa-solid fa-trash"></i></a>
                         </div>
                     </div>
                 </div>
@@ -205,7 +215,8 @@
                         <div class="contenedor__iconos">
                             <a href="editarproducto.html" class="producto__icono" title="Editar"><i
                                     class="fa-solid fa-pencil"></i></a>
-                            <a href="#" class="producto__icono" title="Eliminar"><i class="fa-solid fa-trash"></i></a>
+                            <a href="#modal-eliminar-9" class="producto__icono" title="Eliminar"><i
+                                    class="fa-solid fa-trash"></i></a>
                         </div>
                     </div>
                 </div>
@@ -213,6 +224,242 @@
 
         </div>
     </main>
+
+    <!-- MODALES DE CONFIRMACIÓN DE ELIMINACIÓN -->
+    <div id="modal-eliminar-1" class="ventana-emergente">
+        <div class="ventana-emergente__contenido">
+            <div class="ventana-emergente__icono ventana-emergente__icono--advertencia">
+                <i class="fa-solid fa-question"></i>
+            </div>
+            <h2 class="ventana-emergente__titulo">¿Eliminar Producto?</h2>
+            <p class="ventana-emergente__mensaje">¿Está seguro que desea eliminar este producto? Esta acción no se puede
+                deshacer.</p>
+            <div class="ventana-emergente__botones">
+                <a href="#modal-exito-1" class="ventana-emergente__boton ventana-emergente__boton--si">Sí</a>
+                <a href="#" class="ventana-emergente__boton ventana-emergente__boton--no">No</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-eliminar-2" class="ventana-emergente">
+        <div class="ventana-emergente__contenido">
+            <div class="ventana-emergente__icono ventana-emergente__icono--advertencia">
+                <i class="fa-solid fa-question"></i>
+            </div>
+            <h2 class="ventana-emergente__titulo">¿Eliminar Producto?</h2>
+            <p class="ventana-emergente__mensaje">¿Está seguro que desea eliminar este producto? Esta acción no se puede
+                deshacer.</p>
+            <div class="ventana-emergente__botones">
+                <a href="#modal-exito-2" class="ventana-emergente__boton ventana-emergente__boton--si">Sí</a>
+                <a href="#" class="ventana-emergente__boton ventana-emergente__boton--no">No</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-eliminar-3" class="ventana-emergente">
+        <div class="ventana-emergente__contenido">
+            <div class="ventana-emergente__icono ventana-emergente__icono--advertencia">
+                <i class="fa-solid fa-question"></i>
+            </div>
+            <h2 class="ventana-emergente__titulo">¿Eliminar Producto?</h2>
+            <p class="ventana-emergente__mensaje">¿Está seguro que desea eliminar este producto? Esta acción no se puede
+                deshacer.</p>
+            <div class="ventana-emergente__botones">
+                <a href="#modal-exito-3" class="ventana-emergente__boton ventana-emergente__boton--si">Sí</a>
+                <a href="#" class="ventana-emergente__boton ventana-emergente__boton--no">No</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-eliminar-4" class="ventana-emergente">
+        <div class="ventana-emergente__contenido">
+            <div class="ventana-emergente__icono ventana-emergente__icono--advertencia">
+                <i class="fa-solid fa-question"></i>
+            </div>
+            <h2 class="ventana-emergente__titulo">¿Eliminar Producto?</h2>
+            <p class="ventana-emergente__mensaje">¿Está seguro que desea eliminar este producto? Esta acción no se puede
+                deshacer.</p>
+            <div class="ventana-emergente__botones">
+                <a href="#modal-exito-4" class="ventana-emergente__boton ventana-emergente__boton--si">Sí</a>
+                <a href="#" class="ventana-emergente__boton ventana-emergente__boton--no">No</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-eliminar-5" class="ventana-emergente">
+        <div class="ventana-emergente__contenido">
+            <div class="ventana-emergente__icono ventana-emergente__icono--advertencia">
+                <i class="fa-solid fa-question"></i>
+            </div>
+            <h2 class="ventana-emergente__titulo">¿Eliminar Producto?</h2>
+            <p class="ventana-emergente__mensaje">¿Está seguro que desea eliminar este producto? Esta acción no se puede
+                deshacer.</p>
+            <div class="ventana-emergente__botones">
+                <a href="#modal-exito-5" class="ventana-emergente__boton ventana-emergente__boton--si">Sí</a>
+                <a href="#" class="ventana-emergente__boton ventana-emergente__boton--no">No</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-eliminar-6" class="ventana-emergente">
+        <div class="ventana-emergente__contenido">
+            <div class="ventana-emergente__icono ventana-emergente__icono--advertencia">
+                <i class="fa-solid fa-question"></i>
+            </div>
+            <h2 class="ventana-emergente__titulo">¿Eliminar Producto?</h2>
+            <p class="ventana-emergente__mensaje">¿Está seguro que desea eliminar este producto? Esta acción no se puede
+                deshacer.</p>
+            <div class="ventana-emergente__botones">
+                <a href="#modal-exito-6" class="ventana-emergente__boton ventana-emergente__boton--si">Sí</a>
+                <a href="#" class="ventana-emergente__boton ventana-emergente__boton--no">No</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-eliminar-7" class="ventana-emergente">
+        <div class="ventana-emergente__contenido">
+            <div class="ventana-emergente__icono ventana-emergente__icono--advertencia">
+                <i class="fa-solid fa-question"></i>
+            </div>
+            <h2 class="ventana-emergente__titulo">¿Eliminar Producto?</h2>
+            <p class="ventana-emergente__mensaje">¿Está seguro que desea eliminar este producto? Esta acción no se puede
+                deshacer.</p>
+            <div class="ventana-emergente__botones">
+                <a href="#modal-exito-7" class="ventana-emergente__boton ventana-emergente__boton--si">Sí</a>
+                <a href="#" class="ventana-emergente__boton ventana-emergente__boton--no">No</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-eliminar-8" class="ventana-emergente">
+        <div class="ventana-emergente__contenido">
+            <div class="ventana-emergente__icono ventana-emergente__icono--advertencia">
+                <i class="fa-solid fa-question"></i>
+            </div>
+            <h2 class="ventana-emergente__titulo">¿Eliminar Producto?</h2>
+            <p class="ventana-emergente__mensaje">¿Está seguro que desea eliminar este producto? Esta acción no se puede
+                deshacer.</p>
+            <div class="ventana-emergente__botones">
+                <a href="#modal-exito-8" class="ventana-emergente__boton ventana-emergente__boton--si">Sí</a>
+                <a href="#" class="ventana-emergente__boton ventana-emergente__boton--no">No</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-eliminar-9" class="ventana-emergente">
+        <div class="ventana-emergente__contenido">
+            <div class="ventana-emergente__icono ventana-emergente__icono--advertencia">
+                <i class="fa-solid fa-question"></i>
+            </div>
+            <h2 class="ventana-emergente__titulo">¿Eliminar Producto?</h2>
+            <p class="ventana-emergente__mensaje">¿Está seguro que desea eliminar este producto? Esta acción no se puede
+                deshacer.</p>
+            <div class="ventana-emergente__botones">
+                <a href="#modal-exito-9" class="ventana-emergente__boton ventana-emergente__boton--si">Sí</a>
+                <a href="#" class="ventana-emergente__boton ventana-emergente__boton--no">No</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODALES DE ÉXITO (después de confirmar eliminación) -->
+    <div id="modal-exito-1" class="ventana-emergente">
+        <div class="ventana-emergente__contenido">
+            <div class="ventana-emergente__icono">
+                <i class="fa-solid fa-check-circle"></i>
+            </div>
+            <h2 class="ventana-emergente__titulo">¡Producto Eliminado!</h2>
+            <p class="ventana-emergente__mensaje">El producto ha sido eliminado exitosamente.</p>
+            <a href="#" class="ventana-emergente__boton">Aceptar</a>
+        </div>
+    </div>
+
+    <div id="modal-exito-2" class="ventana-emergente">
+        <div class="ventana-emergente__contenido">
+            <div class="ventana-emergente__icono">
+                <i class="fa-solid fa-check-circle"></i>
+            </div>
+            <h2 class="ventana-emergente__titulo">¡Producto Eliminado!</h2>
+            <p class="ventana-emergente__mensaje">El producto ha sido eliminado exitosamente.</p>
+            <a href="#" class="ventana-emergente__boton">Aceptar</a>
+        </div>
+    </div>
+
+    <div id="modal-exito-3" class="ventana-emergente">
+        <div class="ventana-emergente__contenido">
+            <div class="ventana-emergente__icono">
+                <i class="fa-solid fa-check-circle"></i>
+            </div>
+            <h2 class="ventana-emergente__titulo">¡Producto Eliminado!</h2>
+            <p class="ventana-emergente__mensaje">El producto ha sido eliminado exitosamente.</p>
+            <a href="#" class="ventana-emergente__boton">Aceptar</a>
+        </div>
+    </div>
+
+    <div id="modal-exito-4" class="ventana-emergente">
+        <div class="ventana-emergente__contenido">
+            <div class="ventana-emergente__icono">
+                <i class="fa-solid fa-check-circle"></i>
+            </div>
+            <h2 class="ventana-emergente__titulo">¡Producto Eliminado!</h2>
+            <p class="ventana-emergente__mensaje">El producto ha sido eliminado exitosamente.</p>
+            <a href="#" class="ventana-emergente__boton">Aceptar</a>
+        </div>
+    </div>
+
+    <div id="modal-exito-5" class="ventana-emergente">
+        <div class="ventana-emergente__contenido">
+            <div class="ventana-emergente__icono">
+                <i class="fa-solid fa-check-circle"></i>
+            </div>
+            <h2 class="ventana-emergente__titulo">¡Producto Eliminado!</h2>
+            <p class="ventana-emergente__mensaje">El producto ha sido eliminado exitosamente.</p>
+            <a href="#" class="ventana-emergente__boton">Aceptar</a>
+        </div>
+    </div>
+
+    <div id="modal-exito-6" class="ventana-emergente">
+        <div class="ventana-emergente__contenido">
+            <div class="ventana-emergente__icono">
+                <i class="fa-solid fa-check-circle"></i>
+            </div>
+            <h2 class="ventana-emergente__titulo">¡Producto Eliminado!</h2>
+            <p class="ventana-emergente__mensaje">El producto ha sido eliminado exitosamente.</p>
+            <a href="#" class="ventana-emergente__boton">Aceptar</a>
+        </div>
+    </div>
+
+    <div id="modal-exito-7" class="ventana-emergente">
+        <div class="ventana-emergente__contenido">
+            <div class="ventana-emergente__icono">
+                <i class="fa-solid fa-check-circle"></i>
+            </div>
+            <h2 class="ventana-emergente__titulo">¡Producto Eliminado!</h2>
+            <p class="ventana-emergente__mensaje">El producto ha sido eliminado exitosamente.</p>
+            <a href="#" class="ventana-emergente__boton">Aceptar</a>
+        </div>
+    </div>
+
+    <div id="modal-exito-8" class="ventana-emergente">
+        <div class="ventana-emergente__contenido">
+            <div class="ventana-emergente__icono">
+                <i class="fa-solid fa-check-circle"></i>
+            </div>
+            <h2 class="ventana-emergente__titulo">¡Producto Eliminado!</h2>
+            <p class="ventana-emergente__mensaje">El producto ha sido eliminado exitosamente.</p>
+            <a href="#" class="ventana-emergente__boton">Aceptar</a>
+        </div>
+    </div>
+
+    <div id="modal-exito-9" class="ventana-emergente">
+        <div class="ventana-emergente__contenido">
+            <div class="ventana-emergente__icono">
+                <i class="fa-solid fa-check-circle"></i>
+            </div>
+            <h2 class="ventana-emergente__titulo">¡Producto Eliminado!</h2>
+            <p class="ventana-emergente__mensaje">El producto ha sido eliminado exitosamente.</p>
+            <a href="#" class="ventana-emergente__boton">Aceptar</a>
+        </div>
+    </div>
 </body>
 
 </html>
