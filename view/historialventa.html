@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/historialventa.css" />
+    <link rel="stylesheet" href="/css/historialventa-mediaqueries.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <title>Historial de ventas</title>
 </head>
@@ -45,98 +46,112 @@
                 <tbody class="historial-venta__tabla-body">
 
                     <tr class="historial-venta__item">
-                        <td class="historial-venta__valor">12/04/2024</td>
-                        <td class="historial-venta__valor">María González</td>
-                        <td class="historial-venta__valor">$15.000</td>
-                        <td class="historial-venta__valor historial-venta__estado--completado">Completado</td>
+                        <td class="historial-venta__valor" data-label="Fecha">12/04/2024</td>
+                        <td class="historial-venta__valor" data-label="Cliente">María González</td>
+                        <td class="historial-venta__valor" data-label="Total">$15.000</td>
+                        <td class="historial-venta__valor historial-venta__estado--completado" data-label="Estado">
+                            Completado</td>
                     </tr>
 
                     <tr class="historial-venta__item">
-                        <td class="historial-venta__valor">10/04/2024</td>
-                        <td class="historial-venta__valor">Juan Pérez</td>
-                        <td class="historial-venta__valor">$8.000</td>
-                        <td class="historial-venta__valor historial-venta__estado--pendiente">Pendiente</td>
+                        <td class="historial-venta__valor" data-label="Fecha">10/04/2024</td>
+                        <td class="historial-venta__valor" data-label="Cliente">Juan Pérez</td>
+                        <td class="historial-venta__valor" data-label="Total">$8.000</td>
+                        <td class="historial-venta__valor historial-venta__estado--pendiente" data-label="Estado">
+                            Pendiente</td>
                     </tr>
 
                     <tr class="historial-venta__item">
-                        <td class="historial-venta__valor">08/04/2024</td>
-                        <td class="historial-venta__valor">Ana Gómez</td>
-                        <td class="historial-venta__valor">$5.000</td>
-                        <td class="historial-venta__valor historial-venta__estado--completado">Completado</td>
+                        <td class="historial-venta__valor" data-label="Fecha">08/04/2024</td>
+                        <td class="historial-venta__valor" data-label="Cliente">Ana Gómez</td>
+                        <td class="historial-venta__valor" data-label="Total">$5.000</td>
+                        <td class="historial-venta__valor historial-venta__estado--completado" data-label="Estado">
+                            Completado</td>
                     </tr>
 
                     <tr class="historial-venta__item">
-                        <td class="historial-venta__valor">08/04/2024</td>
-                        <td class="historial-venta__valor">Ana Gómez</td>
-                        <td class="historial-venta__valor">$5.000</td>
-                        <td class="historial-venta__valor historial-venta__estado--completado">Completado</td>
+                        <td class="historial-venta__valor" data-label="Fecha">08/04/2024</td>
+                        <td class="historial-venta__valor" data-label="Cliente">Ana Gómez</td>
+                        <td class="historial-venta__valor" data-label="Total">$5.000</td>
+                        <td class="historial-venta__valor historial-venta__estado--completado" data-label="Estado">
+                            Completado</td>
                     </tr>
 
                     <tr class="historial-venta__item">
-                        <td class="historial-venta__valor">08/04/2024</td>
-                        <td class="historial-venta__valor">Ana Gómez</td>
-                        <td class="historial-venta__valor">$5.000</td>
-                        <td class="historial-venta__valor historial-venta__estado--completado">Completado</td>
+                        <td class="historial-venta__valor" data-label="Fecha">08/04/2024</td>
+                        <td class="historial-venta__valor" data-label="Cliente">Ana Gómez</td>
+                        <td class="historial-venta__valor" data-label="Total">$5.000</td>
+                        <td class="historial-venta__valor historial-venta__estado--completado" data-label="Estado">
+                            Completado</td>
                     </tr>
 
                     <tr class="historial-venta__item">
-                        <td class="historial-venta__valor">08/04/2024</td>
-                        <td class="historial-venta__valor">Ana Gómez</td>
-                        <td class="historial-venta__valor">$5.000</td>
-                        <td class="historial-venta__valor historial-venta__estado--completado">Completado</td>
+                        <td class="historial-venta__valor" data-label="Fecha">08/04/2024</td>
+                        <td class="historial-venta__valor" data-label="Cliente">Ana Gómez</td>
+                        <td class="historial-venta__valor" data-label="Total">$5.000</td>
+                        <td class="historial-venta__valor historial-venta__estado--completado" data-label="Estado">
+                            Completado</td>
                     </tr>
 
                     <tr class="historial-venta__item">
-                        <td class="historial-venta__valor">08/04/2024</td>
-                        <td class="historial-venta__valor">Ana Gómez</td>
-                        <td class="historial-venta__valor">$5.000</td>
-                        <td class="historial-venta__valor historial-venta__estado--completado">Completado</td>
+                        <td class="historial-venta__valor" data-label="Fecha">08/04/2024</td>
+                        <td class="historial-venta__valor" data-label="Cliente">Ana Gómez</td>
+                        <td class="historial-venta__valor" data-label="Total">$5.000</td>
+                        <td class="historial-venta__valor historial-venta__estado--completado" data-label="Estado">
+                            Completado</td>
                     </tr>
 
                     <tr class="historial-venta__item">
-                        <td class="historial-venta__valor">08/04/2024</td>
-                        <td class="historial-venta__valor">Ana Gómez</td>
-                        <td class="historial-venta__valor">$5.000</td>
-                        <td class="historial-venta__valor historial-venta__estado--completado">Completado</td>
+                        <td class="historial-venta__valor" data-label="Fecha">08/04/2024</td>
+                        <td class="historial-venta__valor" data-label="Cliente">Ana Gómez</td>
+                        <td class="historial-venta__valor" data-label="Total">$5.000</td>
+                        <td class="historial-venta__valor historial-venta__estado--completado" data-label="Estado">
+                            Completado</td>
                     </tr>
 
                     <tr class="historial-venta__item">
-                        <td class="historial-venta__valor">08/04/2024</td>
-                        <td class="historial-venta__valor">Ana Gómez</td>
-                        <td class="historial-venta__valor">$5.000</td>
-                        <td class="historial-venta__valor historial-venta__estado--completado">Completado</td>
+                        <td class="historial-venta__valor" data-label="Fecha">08/04/2024</td>
+                        <td class="historial-venta__valor" data-label="Cliente">Ana Gómez</td>
+                        <td class="historial-venta__valor" data-label="Total">$5.000</td>
+                        <td class="historial-venta__valor historial-venta__estado--completado" data-label="Estado">
+                            Completado</td>
                     </tr>
 
                     <tr class="historial-venta__item">
-                        <td class="historial-venta__valor">08/04/2024</td>
-                        <td class="historial-venta__valor">Ana Gómez</td>
-                        <td class="historial-venta__valor">$5.000</td>
-                        <td class="historial-venta__valor historial-venta__estado--completado">Completado</td>
+                        <td class="historial-venta__valor" data-label="Fecha">08/04/2024</td>
+                        <td class="historial-venta__valor" data-label="Cliente">Ana Gómez</td>
+                        <td class="historial-venta__valor" data-label="Total">$5.000</td>
+                        <td class="historial-venta__valor historial-venta__estado--completado" data-label="Estado">
+                            Completado</td>
                     </tr>
                     <tr class="historial-venta__item">
-                        <td class="historial-venta__valor">08/04/2024</td>
-                        <td class="historial-venta__valor">Ana Gómez</td>
-                        <td class="historial-venta__valor">$5.000</td>
-                        <td class="historial-venta__valor historial-venta__estado--completado">Completado</td>
+                        <td class="historial-venta__valor" data-label="Fecha">08/04/2024</td>
+                        <td class="historial-venta__valor" data-label="Cliente">Ana Gómez</td>
+                        <td class="historial-venta__valor" data-label="Total">$5.000</td>
+                        <td class="historial-venta__valor historial-venta__estado--completado" data-label="Estado">
+                            Completado</td>
                     </tr>
                     <tr class="historial-venta__item">
-                        <td class="historial-venta__valor">08/04/2024</td>
-                        <td class="historial-venta__valor">Ana Gómez</td>
-                        <td class="historial-venta__valor">$5.000</td>
-                        <td class="historial-venta__valor historial-venta__estado--completado">Completado</td>
+                        <td class="historial-venta__valor" data-label="Fecha">08/04/2024</td>
+                        <td class="historial-venta__valor" data-label="Cliente">Ana Gómez</td>
+                        <td class="historial-venta__valor" data-label="Total">$5.000</td>
+                        <td class="historial-venta__valor historial-venta__estado--completado" data-label="Estado">
+                            Completado</td>
                     </tr>
                     <tr class="historial-venta__item">
-                        <td class="historial-venta__valor">08/04/2024</td>
-                        <td class="historial-venta__valor">Ana Gómez</td>
-                        <td class="historial-venta__valor">$5.000</td>
-                        <td class="historial-venta__valor historial-venta__estado--completado">Completado</td>
+                        <td class="historial-venta__valor" data-label="Fecha">08/04/2024</td>
+                        <td class="historial-venta__valor" data-label="Cliente">Ana Gómez</td>
+                        <td class="historial-venta__valor" data-label="Total">$5.000</td>
+                        <td class="historial-venta__valor historial-venta__estado--completado" data-label="Estado">
+                            Completado</td>
                     </tr>
 
                     <tr class="historial-venta__item">
-                        <td class="historial-venta__valor">08/04/2024</td>
-                        <td class="historial-venta__valor">Ana Gómez</td>
-                        <td class="historial-venta__valor">$5.000</td>
-                        <td class="historial-venta__valor historial-venta__estado--completado">Completado</td>
+                        <td class="historial-venta__valor" data-label="Fecha">08/04/2024</td>
+                        <td class="historial-venta__valor" data-label="Cliente">Ana Gómez</td>
+                        <td class="historial-venta__valor" data-label="Total">$5.000</td>
+                        <td class="historial-venta__valor historial-venta__estado--completado" data-label="Estado">
+                            Completado</td>
                     </tr>
 
                 </tbody>
