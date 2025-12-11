@@ -1,752 +1,590 @@
-/* ==================== MEDIA QUERIES PRODUCTOS ==================== */
-/* En móvil/tablet: SIN SIDEBAR, solo header con menú hamburguesa arriba */
+/* ==================== MEDIA QUERIES - PRODUCTOS ==================== */
+/* Este archivo contiene los estilos responsive para la página de productos */
+/* En móvil/tablet: El sidebar se oculta y se muestra un header con menú hamburguesa */
 
-/* ========================================
-   LAPTOP (max-width: 1024px)
-   ======================================== */
+/* Breakpoints utilizados:
+   - Laptop: <= 1024px (laptops estándar)
+   - Tablet: <= 768px (tablets - aquí se oculta el sidebar)
+   - Mobile L: <= 425px (móviles grandes - 2 columnas de productos)
+   - Mobile M: <= 375px (móviles medianos - 1 columna de productos)
+   - Mobile S: <= 320px (móviles pequeños)
+*/
+
+/* ========== LAPTOP (max-width: 1024px) ========== */
+/* Ajustes para laptops con pantallas más pequeñas */
 @media screen and (max-width: 1024px) {
+
+    /* Reduce el ancho del sidebar */
     body {
         grid-template-columns: 220px 1fr;
+        /* Sidebar más angosto */
     }
 
+    /* Sidebar más angosto */
     .sidebar {
         width: 220px;
+        /* Reducido de 250px */
     }
 
+    /* Galería en 2 columnas */
     .galeria {
         grid-template-columns: repeat(2, 1fr);
+        /* 2 columnas en vez de 3 */
         gap: 20px;
+        /* Espacio entre cards */
     }
 
+    /* Imágenes de productos más pequeñas */
     .producto__imagen {
         height: 160px;
+        /* Altura reducida */
     }
 
+    /* Menos padding en el main */
     .main {
         padding: 25px;
+        /* Reducido de 30px */
     }
 }
 
-/* ========================================
-   TABLET (max-width: 768px)
-   SIN SIDEBAR - HEADER ARRIBA
-   ======================================== */
+/* ========== TABLET (max-width: 768px) ========== */
+/* CAMBIO IMPORTANTE: Se oculta el sidebar y se muestra el header con menú hamburguesa */
 @media screen and (max-width: 768px) {
 
-    /* Quitar grid, layout normal */
+    /* ===== LAYOUT SIN SIDEBAR ===== */
+
+    /* El body deja de ser grid y pasa a ser bloque normal */
     body {
-        display: block;
+        display: block !important;
+        /* Sobrescribe el grid */
+        grid-template-columns: unset !important;
+        /* Elimina las columnas del grid */
+        grid-template-areas: unset !important;
+        /* Elimina las áreas nombradas */
         padding: 0;
+        /* Sin padding */
         margin: 0;
+        /* Sin margen */
     }
 
-    /* OCULTAR SIDEBAR COMPLETAMENTE */
+    /* ===== OCULTAR SIDEBAR COMPLETAMENTE ===== */
     .sidebar {
         display: none !important;
+        /* No se muestra */
+        visibility: hidden !important;
+        /* Invisible */
+        width: 0 !important;
+        /* Sin ancho */
+        position: absolute !important;
+        /* Fuera del flujo */
+        left: -9999px !important;
+        /* Fuera de la pantalla */
     }
 
-    /* MOSTRAR HEADER MOBILE */
+    /* ===== MOSTRAR HEADER MOBILE ===== */
+    /* Este header contiene el título y el menú hamburguesa */
     .header-mobile {
-        display: block;
+        display: block !important;
+        /* Se muestra */
         position: sticky;
+        /* Se queda fijo al hacer scroll */
         top: 0;
+        /* Pegado arriba */
         left: 0;
+        /* Pegado a la izquierda */
         right: 0;
+        /* Pegado a la derecha */
+        width: 100%;
+        /* Ancho completo */
         background-color: var(--fondo-sidebar);
+        /* Azul oscuro */
         padding: 15px 20px;
+        /* Espaciado interno */
         z-index: 1000;
+        /* Por encima de todo */
     }
 
+    /* Título en el header mobile */
     .header-mobile__titulo {
         color: white;
+        /* Texto blanco */
         font-size: 1.3rem;
+        /* Tamaño de fuente */
         text-align: center;
+        /* Centrado */
         margin: 0;
+        /* Sin margen */
     }
 
-    /* BOTON HAMBURGUESA */
+    /* ===== BOTÓN HAMBURGUESA ===== */
+    /* Las 3 líneas que forman el icono del menú */
     .menu-hamburguesa {
+        display: block !important;
+        /* Se muestra */
         position: absolute;
+        /* Posición absoluta dentro del header */
         top: 50%;
+        /* Centrado verticalmente */
         left: 15px;
+        /* A 15px del borde izquierdo */
         transform: translateY(-50%);
+        /* Ajuste fino del centrado vertical */
         cursor: pointer;
+        /* Cursor de mano */
         padding: 8px;
+        /* Área de toque generosa */
         z-index: 1001;
+        /* Por encima del header */
     }
 
+    /* Cada línea del icono hamburguesa */
     .hamburguesa-linea {
         display: block;
+        /* Se muestra */
         width: 25px;
+        /* Ancho de la línea */
         height: 3px;
+        /* Grosor de la línea */
         background-color: white;
+        /* Color blanco */
         margin: 5px 0;
+        /* Espacio entre líneas */
         border-radius: 2px;
+        /* Esquinas ligeramente redondeadas */
         transition: all 0.3s ease;
+        /* Animación suave para transformar a X */
     }
 
-    /* NAVEGACION DESPLEGABLE */
+    /* ===== NAVEGACIÓN DESPLEGABLE ===== */
+    /* Menú que aparece cuando se abre el hamburguesa */
     .nav-mobile {
         display: none;
+        /* Oculto por defecto */
         background-color: var(--fondo-sidebar);
+        /* Azul oscuro */
         padding: 15px 20px 20px;
+        /* Espaciado interno */
         border-top: 1px solid rgba(255, 255, 255, 0.1);
+        /* Línea separadora */
     }
 
+    /* Cuando el checkbox está marcado, se muestra la navegación */
     .menu-toggle:checked~.nav-mobile {
-        display: block;
+        display: block !important;
+        /* Se muestra */
     }
 
-    /* Animación hamburguesa a X */
+    /* ===== ANIMACIÓN HAMBURGUESA A X ===== */
+    /* Cuando el menú está abierto, las líneas se transforman en una X */
+
+    /* Primera línea rota 45 grados */
     .menu-toggle:checked~.menu-hamburguesa .hamburguesa-linea:nth-child(1) {
         transform: rotate(45deg) translate(5px, 6px);
+        /* Rota y desplaza */
     }
 
+    /* Segunda línea desaparece */
     .menu-toggle:checked~.menu-hamburguesa .hamburguesa-linea:nth-child(2) {
         opacity: 0;
+        /* Invisible */
     }
 
+    /* Tercera línea rota -45 grados */
     .menu-toggle:checked~.menu-hamburguesa .hamburguesa-linea:nth-child(3) {
         transform: rotate(-45deg) translate(5px, -6px);
+        /* Rota y desplaza */
     }
 
+    /* Secciones del menú móvil */
     .nav-mobile__seccion {
         margin-bottom: 15px;
+        /* Espacio entre secciones */
     }
 
+    /* Títulos de sección en el menú */
     .nav-mobile__titulo {
         color: rgba(255, 255, 255, 0.7);
+        /* Blanco semi-transparente */
         font-size: 0.85rem;
+        /* Fuente pequeña */
         text-transform: uppercase;
+        /* Mayúsculas */
         margin-bottom: 8px;
+        /* Espacio debajo */
         letter-spacing: 1px;
+        /* Espaciado entre letras */
     }
 
+    /* Enlaces del menú móvil */
     .nav-mobile__link {
         display: block;
+        /* Elemento de bloque */
         color: white;
+        /* Texto blanco */
         text-decoration: none;
+        /* Sin subrayado */
         padding: 10px 15px;
+        /* Espaciado interno */
         border-radius: 8px;
+        /* Esquinas redondeadas */
         margin-bottom: 5px;
+        /* Espacio entre enlaces */
         transition: background-color 0.3s ease;
+        /* Animación suave */
     }
 
+    /* Hover en los enlaces */
     .nav-mobile__link:hover {
         background-color: rgba(255, 255, 255, 0.15);
+        /* Fondo semi-transparente */
     }
 
-    /* CONTENIDO PRINCIPAL - OCUPA TODO EL ANCHO */
+    /* ===== CONTENIDO PRINCIPAL ===== */
+    /* El main ahora ocupa todo el ancho */
     .main {
         padding: 20px;
+        /* Espaciado interno */
         width: 100%;
+        /* Ancho completo */
     }
 
-    /* GALERÍA - 2 COLUMNAS EN TABLET */
+    /* ===== GALERÍA EN TABLET - 2 COLUMNAS ===== */
     .galeria {
         display: grid;
+        /* Grid para las cards */
         grid-template-columns: repeat(2, 1fr);
+        /* 2 columnas */
         gap: 15px;
+        /* Espacio entre cards */
     }
 
-    /* CARDS */
+    /* ===== CARDS DE PRODUCTOS ===== */
     .producto {
         border-radius: 12px;
+        /* Esquinas redondeadas */
     }
 
+    /* Imágenes más pequeñas */
     .producto__imagen {
         height: 140px;
+        /* Altura reducida */
     }
 
+    /* Contenido de la card */
     .producto__contenido {
         padding: 15px;
+        /* Espaciado interno */
     }
 
+    /* Título más pequeño */
     .producto__titulo {
         font-size: 1.1rem;
+        /* Tamaño reducido */
         margin-bottom: 8px;
+        /* Espacio debajo */
     }
 
+    /* Descripción truncada a 2 líneas */
     .producto__descripcion {
         font-size: 0.85rem;
+        /* Fuente más pequeña */
         margin-bottom: 12px;
+        /* Espacio debajo */
         display: -webkit-box;
+        /* Necesario para truncar */
         -webkit-line-clamp: 2;
+        /* Máximo 2 líneas */
         -webkit-box-orient: vertical;
+        /* Orientación vertical */
         overflow: hidden;
+        /* Oculta el resto */
     }
 
+    /* Contenedor del precio */
     .contenedor__precio {
         padding-top: 10px;
+        /* Espacio arriba */
     }
 
+    /* Precio más pequeño */
     .producto__precio {
         font-size: 1.1rem;
+        /* Tamaño reducido */
     }
 
+    /* Iconos más pequeños */
     .producto__icono {
         width: 32px;
+        /* Ancho reducido */
         height: 32px;
+        /* Altura reducida */
     }
 
+    /* Iconos FontAwesome más pequeños */
     .producto__icono i {
         font-size: 0.85rem;
+        /* Tamaño reducido */
     }
 }
 
-/* ========================================
-   MOBILE L (max-width: 425px) - 2 COLUMNAS
-   ======================================== */
+/* ========== MOBILE L (max-width: 425px) - 2 COLUMNAS ========== */
+/* Para móviles grandes como iPhone Plus, Samsung Galaxy grandes */
 @media screen and (max-width: 425px) {
+
+    /* Header más compacto */
     .header-mobile {
         padding: 12px 15px;
+        /* Menos espaciado */
     }
 
+    /* Título más pequeño */
     .header-mobile__titulo {
         font-size: 1.2rem;
+        /* Tamaño reducido */
     }
 
+    /* Hamburguesa más a la izquierda */
     .menu-hamburguesa {
         left: 10px;
+        /* Más cerca del borde */
     }
 
+    /* Líneas del hamburguesa más pequeñas */
     .hamburguesa-linea {
         width: 22px;
+        /* Ancho reducido */
         height: 2.5px;
+        /* Grosor reducido */
     }
 
+    /* Main más compacto */
     .main {
         padding: 15px;
+        /* Menos espaciado */
     }
 
-    /* 2 COLUMNAS EN MOBILE L */
+    /* ===== 2 COLUMNAS EN MOBILE L ===== */
     .galeria {
         grid-template-columns: repeat(2, 1fr);
+        /* 2 columnas */
         gap: 12px;
+        /* Menos espacio */
     }
 
+    /* Cards más compactas */
     .producto {
         border-radius: 10px;
+        /* Esquinas menos redondeadas */
     }
 
+    /* Imágenes más pequeñas */
     .producto__imagen {
         height: 120px;
+        /* Altura reducida */
     }
 
+    /* Contenido más compacto */
     .producto__contenido {
         padding: 12px;
+        /* Menos espaciado */
     }
 
+    /* Título más pequeño */
     .producto__titulo {
         font-size: 1rem;
+        /* Tamaño estándar */
     }
 
+    /* Descripción más pequeña */
     .producto__descripcion {
         font-size: 0.8rem;
+        /* Fuente pequeña */
         -webkit-line-clamp: 2;
+        /* Máximo 2 líneas */
     }
 
+    /* Precio más pequeño */
     .producto__precio {
         font-size: 1rem;
+        /* Tamaño estándar */
     }
 
+    /* Menos espacio entre iconos */
     .contenedor__iconos {
         gap: 8px;
+        /* Espacio reducido */
     }
 
+    /* Iconos más pequeños */
     .producto__icono {
         width: 28px;
+        /* Ancho reducido */
         height: 28px;
+        /* Altura reducida */
     }
 
+    /* Iconos FontAwesome más pequeños */
     .producto__icono i {
         font-size: 0.75rem;
+        /* Tamaño muy pequeño */
     }
 }
 
-/* ========================================
-   MOBILE M (max-width: 375px) - 1 COLUMNA
-   ======================================== */
+/* ========== MOBILE M (max-width: 375px) - 1 COLUMNA ========== */
+/* Para móviles medianos como iPhone X, iPhone 11/12/13 */
 @media screen and (max-width: 375px) {
+
+    /* Header más compacto */
     .header-mobile {
         padding: 10px 12px;
+        /* Menos espaciado */
     }
 
+    /* Título más pequeño */
     .header-mobile__titulo {
         font-size: 1.1rem;
+        /* Tamaño reducido */
     }
 
+    /* Main más compacto */
     .main {
         padding: 12px;
+        /* Menos espaciado */
     }
 
-    /* 1 COLUMNA - CARDS GRANDES */
+    /* ===== 1 COLUMNA - CARDS GRANDES ===== */
+    /* En móviles pequeños, mejor mostrar 1 card grande que 2 pequeñas */
     .galeria {
         grid-template-columns: 1fr;
+        /* Solo 1 columna */
         gap: 15px;
+        /* Espacio entre cards */
     }
 
+    /* Imágenes más grandes (porque hay espacio) */
     .producto__imagen {
         height: 180px;
+        /* Altura aumentada */
     }
 
+    /* Más espacio en el contenido */
     .producto__contenido {
         padding: 15px;
+        /* Espaciado generoso */
     }
 
+    /* Título más grande */
     .producto__titulo {
         font-size: 1.15rem;
+        /* Ligeramente mayor */
     }
 
+    /* Descripción de 3 líneas (más espacio disponible) */
     .producto__descripcion {
         font-size: 0.9rem;
+        /* Fuente más grande */
         -webkit-line-clamp: 3;
+        /* Ahora 3 líneas */
     }
 
+    /* Precio más grande */
     .producto__precio {
         font-size: 1.2rem;
+        /* Tamaño mayor */
     }
 
+    /* Iconos más grandes */
     .producto__icono {
         width: 34px;
+        /* Ancho aumentado */
         height: 34px;
+        /* Altura aumentada */
     }
 
+    /* Iconos FontAwesome más grandes */
     .producto__icono i {
         font-size: 0.9rem;
+        /* Tamaño mayor */
     }
 }
 
-/* ========================================
-   MOBILE S (max-width: 320px) - 1 COLUMNA
-   ======================================== */
+/* ========== MOBILE S (max-width: 320px) - 1 COLUMNA ========== */
+/* Para móviles muy pequeños como iPhone 5/SE primera generación */
 @media screen and (max-width: 320px) {
+
+    /* Header muy compacto */
     .header-mobile {
         padding: 8px 10px;
+        /* Espaciado mínimo */
     }
 
+    /* Título más pequeño */
     .header-mobile__titulo {
         font-size: 1rem;
+        /* Tamaño mínimo */
     }
 
+    /* Hamburguesa más cerca del borde */
     .menu-hamburguesa {
         left: 8px;
+        /* Muy cerca del borde */
     }
 
+    /* Líneas del hamburguesa muy pequeñas */
     .hamburguesa-linea {
         width: 20px;
+        /* Ancho mínimo */
         height: 2px;
+        /* Grosor mínimo */
     }
 
+    /* Main muy compacto */
     .main {
         padding: 10px;
+        /* Espaciado mínimo */
     }
 
+    /* Menos espacio entre cards */
     .galeria {
         gap: 12px;
+        /* Espacio reducido */
     }
 
+    /* Imágenes más pequeñas */
     .producto__imagen {
         height: 150px;
+        /* Altura reducida */
     }
 
+    /* Contenido más compacto */
     .producto__contenido {
         padding: 12px;
+        /* Menos espaciado */
     }
 
+    /* Título más pequeño */
     .producto__titulo {
         font-size: 1.05rem;
+        /* Ligeramente reducido */
     }
 
+    /* Descripción más pequeña */
     .producto__descripcion {
         font-size: 0.85rem;
+        /* Fuente pequeña */
     }
 
+    /* Precio más pequeño */
     .producto__precio {
         font-size: 1.1rem;
+        /* Ligeramente reducido */
     }
 
+    /* Iconos más pequeños */
     .producto__icono {
         width: 30px;
+        /* Ancho reducido */
         height: 30px;
+        /* Altura reducida */
     }
-}
-
-/* ========================================
-   LAPTOP (max-width: 1024px)
-   ======================================== */
-@media screen and (max-width: 1024px) {
-  body {
-    grid-template-columns: 220px 1fr;
-  }
-
-  .sidebar {
-    width: 220px;
-  }
-
-  .galeria {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-
-  .producto__imagen {
-    height: 160px;
-  }
-
-  .main {
-    padding: 25px;
-  }
-}
-
-/* ========================================
-   TABLET Y MÓVIL (max-width: 768px)
-   SIN SIDEBAR - HEADER ARRIBA
-   ======================================== */
-@media screen and (max-width: 768px) {
-
-  /* Quitar grid, layout normal */
-  body {
-    display: block !important;
-    grid-template-columns: unset !important;
-    grid-template-areas: unset !important;
-    padding: 0;
-    margin: 0;
-  }
-
-  /* OCULTAR SIDEBAR COMPLETAMENTE */
-  .sidebar {
-    display: none !important;
-    visibility: hidden !important;
-    width: 0 !important;
-    position: absolute !important;
-    left: -9999px !important;
-  }
-
-  /* MOSTRAR HEADER MOBILE */
-  .header-mobile {
-    display: block !important;
-    position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    background-color: var(--fondo-sidebar);
-    padding: 15px 20px;
-    z-index: 1000;
-  }
-
-  .header-mobile__titulo {
-    color: white;
-    font-size: 1.3rem;
-    text-align: center;
-    margin: 0;
-  }
-
-  /* BOTON HAMBURGUESA */
-  .menu-hamburguesa {
-    display: block !important;
-    position: absolute;
-    top: 50%;
-    left: 15px;
-    transform: translateY(-50%);
-    cursor: pointer;
-    padding: 8px;
-    z-index: 1001;
-  }
-
-  .hamburguesa-linea {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 5px 0;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-  }
-
-  /* NAVEGACIÓN DESPLEGABLE */
-  .nav-mobile {
-    display: none;
-    background-color: var(--fondo-sidebar);
-    padding: 15px 20px 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .menu-toggle:checked~.nav-mobile {
-    display: block !important;
-  }
-
-  /* Animación hamburguesa a X */
-  .menu-toggle:checked~.menu-hamburguesa .hamburguesa-linea:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 6px);
-  }
-
-  .menu-toggle:checked~.menu-hamburguesa .hamburguesa-linea:nth-child(2) {
-    opacity: 0;
-  }
-
-  .menu-toggle:checked~.menu-hamburguesa .hamburguesa-linea:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -6px);
-  }
-
-  .nav-mobile__seccion {
-    margin-bottom: 15px;
-  }
-
-  .nav-mobile__titulo {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-    letter-spacing: 1px;
-  }
-
-  .nav-mobile__link {
-    display: block;
-    color: white;
-    text-decoration: none;
-    padding: 10px 15px;
-    border-radius: 8px;
-    margin-bottom: 5px;
-    transition: background-color 0.3s ease;
-  }
-
-  .nav-mobile__link:hover {
-    background-color: rgba(255, 255, 255, 0.15);
-  }
-
-  /* CONTENIDO PRINCIPAL - OCUPA TODO EL ANCHO */
-  .main {
-    padding: 20px;
-    width: 100%;
-  }
-
-  /* GALERÍA - 2 COLUMNAS EN TABLET */
-  .galeria {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-
-  /* CARDS */
-  .producto {
-    border-radius: 12px;
-  }
-
-  .producto__imagen {
-    height: 140px;
-  }
-
-  .producto__contenido {
-    padding: 15px;
-  }
-
-  .producto__titulo {
-    font-size: 1.1rem;
-    margin-bottom: 8px;
-  }
-
-  .producto__descripcion {
-    font-size: 0.85rem;
-    margin-bottom: 12px;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  .contenedor__precio {
-    padding-top: 10px;
-  }
-
-  .producto__precio {
-    font-size: 1.1rem;
-  }
-
-  .producto__icono {
-    width: 32px;
-    height: 32px;
-  }
-
-  .producto__icono i {
-    font-size: 0.85rem;
-  }
-}
-
-/* ========================================
-   MOBILE L (max-width: 425px) - 2 COLUMNAS
-   ======================================== */
-@media screen and (max-width: 425px) {
-  .header-mobile {
-    padding: 12px 15px;
-  }
-
-  .header-mobile__titulo {
-    font-size: 1.2rem;
-  }
-
-  .menu-hamburguesa {
-    left: 10px;
-  }
-
-  .hamburguesa-linea {
-    width: 22px;
-    height: 2.5px;
-  }
-
-  .main {
-    padding: 15px;
-  }
-
-  /* 2 COLUMNAS EN MOBILE L */
-  .galeria {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
-
-  .producto {
-    border-radius: 10px;
-  }
-
-  .producto__imagen {
-    height: 120px;
-  }
-
-  .producto__contenido {
-    padding: 12px;
-  }
-
-  .producto__titulo {
-    font-size: 1rem;
-  }
-
-  .producto__descripcion {
-    font-size: 0.8rem;
-    -webkit-line-clamp: 2;
-  }
-
-  .producto__precio {
-    font-size: 1rem;
-  }
-
-  .contenedor__iconos {
-    gap: 8px;
-  }
-
-  .producto__icono {
-    width: 28px;
-    height: 28px;
-  }
-
-  .producto__icono i {
-    font-size: 0.75rem;
-  }
-}
-
-/* ========================================
-   MOBILE M (max-width: 375px) - 1 COLUMNA
-   ======================================== */
-@media screen and (max-width: 375px) {
-  .header-mobile {
-    padding: 10px 12px;
-  }
-
-  .header-mobile__titulo {
-    font-size: 1.1rem;
-  }
-
-  .main {
-    padding: 12px;
-  }
-
-  /* 1 COLUMNA - CARDS GRANDES */
-  .galeria {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-
-  .producto__imagen {
-    height: 180px;
-  }
-
-  .producto__contenido {
-    padding: 15px;
-  }
-
-  .producto__titulo {
-    font-size: 1.15rem;
-  }
-
-  .producto__descripcion {
-    font-size: 0.9rem;
-    -webkit-line-clamp: 3;
-  }
-
-  .producto__precio {
-    font-size: 1.2rem;
-  }
-
-  .producto__icono {
-    width: 34px;
-    height: 34px;
-  }
-
-  .producto__icono i {
-    font-size: 0.9rem;
-  }
-}
-
-/* ========================================
-   MOBILE S (max-width: 320px) - 1 COLUMNA
-   ======================================== */
-@media screen and (max-width: 320px) {
-  .header-mobile {
-    padding: 8px 10px;
-  }
-
-  .header-mobile__titulo {
-    font-size: 1rem;
-  }
-
-  .menu-hamburguesa {
-    left: 8px;
-  }
-
-  .hamburguesa-linea {
-    width: 20px;
-    height: 2px;
-  }
-
-  .main {
-    padding: 10px;
-  }
-
-  .galeria {
-    gap: 12px;
-  }
-
-  .producto__imagen {
-    height: 150px;
-  }
-
-  .producto__contenido {
-    padding: 12px;
-  }
-
-  .producto__titulo {
-    font-size: 1.05rem;
-  }
-
-  .producto__descripcion {
-    font-size: 0.85rem;
-  }
-
-  .producto__precio {
-    font-size: 1.1rem;
-  }
-
-  .producto__icono {
-    width: 30px;
-    height: 30px;
-  }
 }
