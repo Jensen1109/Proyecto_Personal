@@ -1,19 +1,48 @@
 @import url(../css/custom/custompropertiers.css);
 @import url(../css/custom/productos-mediaqueries.css);
 
+/* ========================================
+   ESTILOS BASE - DESKTOP
+   ======================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   display: grid;
   grid-template-columns: 250px 1fr;
   grid-template-areas: "sidebar main";
   min-height: 100vh;
-  margin: 0;
-  overflow-x: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
 }
 
+/* ========================================
+   HEADER MOBILE - OCULTO EN DESKTOP
+   ======================================== */
+.header-mobile {
+  display: none;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.menu-hamburguesa {
+  display: none;
+}
+
+.nav-mobile {
+  display: none;
+}
+
+/* ========================================
+   SIDEBAR - VISIBLE EN DESKTOP
+   ======================================== */
 .sidebar {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
   grid-area: sidebar;
   height: 100vh;
   width: 250px;
@@ -23,11 +52,12 @@ body {
   left: 0;
   z-index: 100;
   overflow-y: auto;
-  transition: transform 0.3s ease;
 }
-.sidebar__titulo
-{
+
+.sidebar__titulo {
   color: white;
+  font-size: 1.1rem;
+  margin-top: 20px;
 }
 
 .contenedor__sidebar {
@@ -39,98 +69,118 @@ body {
 .sidebar__link {
   color: var(--color-texto);
   text-decoration: none;
-  margin-top: 29px;
-  cursor: pointer;
-  padding: 10px;
+  margin-top: 15px;
+  padding: 12px 15px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
 }
 
 .sidebar__link:hover {
-  background-color: dodgerblue;
-  transition: 0.3s;
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
+/* ========================================
+   CONTENIDO PRINCIPAL
+   ======================================== */
 .main {
   grid-area: main;
   padding: 30px;
   overflow-y: auto;
-  overflow-x: hidden;
-  box-sizing: border-box;
 }
 
+/* ========================================
+   GALERÍA DE PRODUCTOS
+   ======================================== */
 .galeria {
   display: grid;
   gap: 25px;
-  grid-template-columns: repeat(auto-fit, minmax(calc(100% / 3 - 25px), 1fr));
-  max-width: 100%;
+  grid-template-columns: repeat(3, 1fr);
 }
 
+/* ========================================
+   CARDS DE PRODUCTOS
+   ======================================== */
 .producto {
   display: flex;
-  align-items: center;
   flex-direction: column;
-  padding: 1rem;
-  border-radius: 8px;
-  background-color: var(--fondo-main);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  border: none;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   overflow: hidden;
-  box-sizing: border-box;
-  max-width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.producto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.producto__imagen {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.producto__contenido {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.producto__titulo {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 10px;
 }
 
 .producto__descripcion {
-  text-align: justify;
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  flex-grow: 1;
 }
 
 .contenedor__precio {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.producto__precio {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #27ae60;
 }
 
 .contenedor__iconos {
   display: flex;
-  gap: 2rem;
+  gap: 12px;
 }
 
-.producto__imagen {
-  object-fit: cover;
-  height: 130px;
-  width: 100%;
-  max-width: 310px;
+.producto__icono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #f0f4f8;
+  color: #5a6c7d;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
-.producto:hover {
-  transform: translateY(-5px);
+.producto__icono:hover {
+  background-color: #3498db;
+  color: white;
 }
 
-/* ==================== MENU HAMBURGUESA (solo CSS) ==================== */
-
-/* Ocultar checkbox */
-.menu-toggle {
-  display: none;
+.producto__icono i {
+  font-size: 0.9rem;
 }
 
-/* Botón hamburguesa - oculto en desktop */
-.menu-hamburguesa {
-  display: none;
-  position: fixed;
-  top: 15px;
-  left: 15px;
-  z-index: 200;
-  cursor: pointer;
-  padding: 10px;
-  background-color: var(--aside-fondo);
-  border-radius: 5px;
-}
-
-.hamburguesa-linea {
-  display: block;
-  width: 25px;
-  height: 3px;
-  background-color: white;
-  margin: 5px 0;
-  transition: 0.3s;
-  border-radius: 2px;
-}

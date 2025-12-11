@@ -1,7 +1,10 @@
 /* ==================== MEDIA QUERIES PRODUCTOS ==================== */
+/* En móvil/tablet: SIN SIDEBAR, solo header con menú hamburguesa arriba */
 
-/* Laptop (992px - 1199px) */
-@media screen and (max-width: 1199px) {
+/* ========================================
+   LAPTOP (max-width: 1024px)
+   ======================================== */
+@media screen and (max-width: 1024px) {
     body {
         grid-template-columns: 220px 1fr;
     }
@@ -11,44 +14,90 @@
     }
 
     .galeria {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
 
     .producto__imagen {
-        width: 100%;
-        height: 120px;
+        height: 160px;
+    }
+
+    .main {
+        padding: 25px;
     }
 }
 
-/* Tablet y Celular (menos de 991px) - Menu hamburguesa */
-@media screen and (max-width: 991px) {
+/* ========================================
+   TABLET (max-width: 768px)
+   SIN SIDEBAR - HEADER ARRIBA
+   ======================================== */
+@media screen and (max-width: 768px) {
+
+    /* Quitar grid, layout normal */
     body {
         display: block;
-        padding-top: 60px;
+        padding: 0;
+        margin: 0;
     }
 
-    /* Mostrar botón hamburguesa */
+    /* OCULTAR SIDEBAR COMPLETAMENTE */
+    .sidebar {
+        display: none !important;
+    }
+
+    /* MOSTRAR HEADER MOBILE */
+    .header-mobile {
+        display: block;
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: var(--fondo-sidebar);
+        padding: 15px 20px;
+        z-index: 1000;
+    }
+
+    .header-mobile__titulo {
+        color: white;
+        font-size: 1.3rem;
+        text-align: center;
+        margin: 0;
+    }
+
+    /* BOTON HAMBURGUESA */
     .menu-hamburguesa {
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transform: translateY(-50%);
+        cursor: pointer;
+        padding: 8px;
+        z-index: 1001;
+    }
+
+    .hamburguesa-linea {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 5px 0;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    /* NAVEGACION DESPLEGABLE */
+    .nav-mobile {
+        display: none;
+        background-color: var(--fondo-sidebar);
+        padding: 15px 20px 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .menu-toggle:checked~.nav-mobile {
         display: block;
     }
 
-    /* Sidebar oculto por defecto */
-    .sidebar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 250px;
-        height: 100vh;
-        transform: translateX(-100%);
-        z-index: 150;
-    }
-
-    /* Mostrar sidebar cuando checkbox está activo */
-    .menu-toggle:checked~.sidebar {
-        transform: translateX(0);
-    }
-
-    /* Animación de las líneas del hamburguesa cuando está activo */
+    /* Animación hamburguesa a X */
     .menu-toggle:checked~.menu-hamburguesa .hamburguesa-linea:nth-child(1) {
         transform: rotate(45deg) translate(5px, 6px);
     }
@@ -61,61 +110,131 @@
         transform: rotate(-45deg) translate(5px, -6px);
     }
 
+    .nav-mobile__seccion {
+        margin-bottom: 15px;
+    }
+
+    .nav-mobile__titulo {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+        letter-spacing: 1px;
+    }
+
+    .nav-mobile__link {
+        display: block;
+        color: white;
+        text-decoration: none;
+        padding: 10px 15px;
+        border-radius: 8px;
+        margin-bottom: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .nav-mobile__link:hover {
+        background-color: rgba(255, 255, 255, 0.15);
+    }
+
+    /* CONTENIDO PRINCIPAL - OCUPA TODO EL ANCHO */
     .main {
         padding: 20px;
         width: 100%;
-        box-sizing: border-box;
-        overflow-x: hidden;
     }
 
+    /* GALERÍA - 2 COLUMNAS EN TABLET */
     .galeria {
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         gap: 15px;
     }
 
+    /* CARDS */
     .producto {
-        padding: 0.8rem;
+        border-radius: 12px;
     }
 
     .producto__imagen {
-        height: 100px;
-        width: 100%;
+        height: 140px;
     }
 
-    .contenedor__iconos {
-        gap: 1rem;
-    }
-}
-
-/* Celular (menos de 768px) */
-@media screen and (max-width: 767px) {
-    .sidebar {
-        width: 200px;
-    }
-
-    .contenedor__sidebar {
+    .producto__contenido {
         padding: 15px;
     }
 
-    .sidebar__link {
-        margin-top: 15px;
-        padding: 8px;
-        font-size: 14px;
+    .producto__titulo {
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+    }
+
+    .producto__descripcion {
+        font-size: 0.85rem;
+        margin-bottom: 12px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .contenedor__precio {
+        padding-top: 10px;
+    }
+
+    .producto__precio {
+        font-size: 1.1rem;
+    }
+
+    .producto__icono {
+        width: 32px;
+        height: 32px;
+    }
+
+    .producto__icono i {
+        font-size: 0.85rem;
+    }
+}
+
+/* ========================================
+   MOBILE L (max-width: 425px) - 2 COLUMNAS
+   ======================================== */
+@media screen and (max-width: 425px) {
+    .header-mobile {
+        padding: 12px 15px;
+    }
+
+    .header-mobile__titulo {
+        font-size: 1.2rem;
+    }
+
+    .menu-hamburguesa {
+        left: 10px;
+    }
+
+    .hamburguesa-linea {
+        width: 22px;
+        height: 2.5px;
     }
 
     .main {
         padding: 15px;
-        box-sizing: border-box;
     }
 
+    /* 2 COLUMNAS EN MOBILE L */
     .galeria {
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-        gap: 10px;
-        max-width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
     }
 
     .producto {
-        padding: 0.5rem;
+        border-radius: 10px;
+    }
+
+    .producto__imagen {
+        height: 120px;
+    }
+
+    .producto__contenido {
+        padding: 12px;
     }
 
     .producto__titulo {
@@ -123,31 +242,511 @@
     }
 
     .producto__descripcion {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
+        -webkit-line-clamp: 2;
     }
 
-    .producto__imagen {
-        height: 80px;
-        max-width: 100%;
+    .producto__precio {
+        font-size: 1rem;
     }
 
-    .contenedor__precio {
-        flex-direction: column;
-        gap: 10px;
+    .contenedor__iconos {
+        gap: 8px;
+    }
+
+    .producto__icono {
+        width: 28px;
+        height: 28px;
+    }
+
+    .producto__icono i {
+        font-size: 0.75rem;
     }
 }
 
-/* Celular pequeño (menos de 480px) */
-@media screen and (max-width: 480px) {
+/* ========================================
+   MOBILE M (max-width: 375px) - 1 COLUMNA
+   ======================================== */
+@media screen and (max-width: 375px) {
+    .header-mobile {
+        padding: 10px 12px;
+    }
+
+    .header-mobile__titulo {
+        font-size: 1.1rem;
+    }
+
+    .main {
+        padding: 12px;
+    }
+
+    /* 1 COLUMNA - CARDS GRANDES */
     .galeria {
         grid-template-columns: 1fr;
+        gap: 15px;
     }
 
     .producto__imagen {
-        height: 120px;
+        height: 180px;
     }
 
-    .sidebar {
-        width: 100%;
+    .producto__contenido {
+        padding: 15px;
     }
+
+    .producto__titulo {
+        font-size: 1.15rem;
+    }
+
+    .producto__descripcion {
+        font-size: 0.9rem;
+        -webkit-line-clamp: 3;
+    }
+
+    .producto__precio {
+        font-size: 1.2rem;
+    }
+
+    .producto__icono {
+        width: 34px;
+        height: 34px;
+    }
+
+    .producto__icono i {
+        font-size: 0.9rem;
+    }
+}
+
+/* ========================================
+   MOBILE S (max-width: 320px) - 1 COLUMNA
+   ======================================== */
+@media screen and (max-width: 320px) {
+    .header-mobile {
+        padding: 8px 10px;
+    }
+
+    .header-mobile__titulo {
+        font-size: 1rem;
+    }
+
+    .menu-hamburguesa {
+        left: 8px;
+    }
+
+    .hamburguesa-linea {
+        width: 20px;
+        height: 2px;
+    }
+
+    .main {
+        padding: 10px;
+    }
+
+    .galeria {
+        gap: 12px;
+    }
+
+    .producto__imagen {
+        height: 150px;
+    }
+
+    .producto__contenido {
+        padding: 12px;
+    }
+
+    .producto__titulo {
+        font-size: 1.05rem;
+    }
+
+    .producto__descripcion {
+        font-size: 0.85rem;
+    }
+
+    .producto__precio {
+        font-size: 1.1rem;
+    }
+
+    .producto__icono {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* ========================================
+   LAPTOP (max-width: 1024px)
+   ======================================== */
+@media screen and (max-width: 1024px) {
+  body {
+    grid-template-columns: 220px 1fr;
+  }
+
+  .sidebar {
+    width: 220px;
+  }
+
+  .galeria {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .producto__imagen {
+    height: 160px;
+  }
+
+  .main {
+    padding: 25px;
+  }
+}
+
+/* ========================================
+   TABLET Y MÓVIL (max-width: 768px)
+   SIN SIDEBAR - HEADER ARRIBA
+   ======================================== */
+@media screen and (max-width: 768px) {
+
+  /* Quitar grid, layout normal */
+  body {
+    display: block !important;
+    grid-template-columns: unset !important;
+    grid-template-areas: unset !important;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* OCULTAR SIDEBAR COMPLETAMENTE */
+  .sidebar {
+    display: none !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    position: absolute !important;
+    left: -9999px !important;
+  }
+
+  /* MOSTRAR HEADER MOBILE */
+  .header-mobile {
+    display: block !important;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: var(--fondo-sidebar);
+    padding: 15px 20px;
+    z-index: 1000;
+  }
+
+  .header-mobile__titulo {
+    color: white;
+    font-size: 1.3rem;
+    text-align: center;
+    margin: 0;
+  }
+
+  /* BOTON HAMBURGUESA */
+  .menu-hamburguesa {
+    display: block !important;
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1001;
+  }
+
+  .hamburguesa-linea {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  /* NAVEGACIÓN DESPLEGABLE */
+  .nav-mobile {
+    display: none;
+    background-color: var(--fondo-sidebar);
+    padding: 15px 20px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .menu-toggle:checked~.nav-mobile {
+    display: block !important;
+  }
+
+  /* Animación hamburguesa a X */
+  .menu-toggle:checked~.menu-hamburguesa .hamburguesa-linea:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+  }
+
+  .menu-toggle:checked~.menu-hamburguesa .hamburguesa-linea:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle:checked~.menu-hamburguesa .hamburguesa-linea:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
+  }
+
+  .nav-mobile__seccion {
+    margin-bottom: 15px;
+  }
+
+  .nav-mobile__titulo {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+  }
+
+  .nav-mobile__link {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  .nav-mobile__link:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+
+  /* CONTENIDO PRINCIPAL - OCUPA TODO EL ANCHO */
+  .main {
+    padding: 20px;
+    width: 100%;
+  }
+
+  /* GALERÍA - 2 COLUMNAS EN TABLET */
+  .galeria {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  /* CARDS */
+  .producto {
+    border-radius: 12px;
+  }
+
+  .producto__imagen {
+    height: 140px;
+  }
+
+  .producto__contenido {
+    padding: 15px;
+  }
+
+  .producto__titulo {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+
+  .producto__descripcion {
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .contenedor__precio {
+    padding-top: 10px;
+  }
+
+  .producto__precio {
+    font-size: 1.1rem;
+  }
+
+  .producto__icono {
+    width: 32px;
+    height: 32px;
+  }
+
+  .producto__icono i {
+    font-size: 0.85rem;
+  }
+}
+
+/* ========================================
+   MOBILE L (max-width: 425px) - 2 COLUMNAS
+   ======================================== */
+@media screen and (max-width: 425px) {
+  .header-mobile {
+    padding: 12px 15px;
+  }
+
+  .header-mobile__titulo {
+    font-size: 1.2rem;
+  }
+
+  .menu-hamburguesa {
+    left: 10px;
+  }
+
+  .hamburguesa-linea {
+    width: 22px;
+    height: 2.5px;
+  }
+
+  .main {
+    padding: 15px;
+  }
+
+  /* 2 COLUMNAS EN MOBILE L */
+  .galeria {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .producto {
+    border-radius: 10px;
+  }
+
+  .producto__imagen {
+    height: 120px;
+  }
+
+  .producto__contenido {
+    padding: 12px;
+  }
+
+  .producto__titulo {
+    font-size: 1rem;
+  }
+
+  .producto__descripcion {
+    font-size: 0.8rem;
+    -webkit-line-clamp: 2;
+  }
+
+  .producto__precio {
+    font-size: 1rem;
+  }
+
+  .contenedor__iconos {
+    gap: 8px;
+  }
+
+  .producto__icono {
+    width: 28px;
+    height: 28px;
+  }
+
+  .producto__icono i {
+    font-size: 0.75rem;
+  }
+}
+
+/* ========================================
+   MOBILE M (max-width: 375px) - 1 COLUMNA
+   ======================================== */
+@media screen and (max-width: 375px) {
+  .header-mobile {
+    padding: 10px 12px;
+  }
+
+  .header-mobile__titulo {
+    font-size: 1.1rem;
+  }
+
+  .main {
+    padding: 12px;
+  }
+
+  /* 1 COLUMNA - CARDS GRANDES */
+  .galeria {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .producto__imagen {
+    height: 180px;
+  }
+
+  .producto__contenido {
+    padding: 15px;
+  }
+
+  .producto__titulo {
+    font-size: 1.15rem;
+  }
+
+  .producto__descripcion {
+    font-size: 0.9rem;
+    -webkit-line-clamp: 3;
+  }
+
+  .producto__precio {
+    font-size: 1.2rem;
+  }
+
+  .producto__icono {
+    width: 34px;
+    height: 34px;
+  }
+
+  .producto__icono i {
+    font-size: 0.9rem;
+  }
+}
+
+/* ========================================
+   MOBILE S (max-width: 320px) - 1 COLUMNA
+   ======================================== */
+@media screen and (max-width: 320px) {
+  .header-mobile {
+    padding: 8px 10px;
+  }
+
+  .header-mobile__titulo {
+    font-size: 1rem;
+  }
+
+  .menu-hamburguesa {
+    left: 8px;
+  }
+
+  .hamburguesa-linea {
+    width: 20px;
+    height: 2px;
+  }
+
+  .main {
+    padding: 10px;
+  }
+
+  .galeria {
+    gap: 12px;
+  }
+
+  .producto__imagen {
+    height: 150px;
+  }
+
+  .producto__contenido {
+    padding: 12px;
+  }
+
+  .producto__titulo {
+    font-size: 1.05rem;
+  }
+
+  .producto__descripcion {
+    font-size: 0.85rem;
+  }
+
+  .producto__precio {
+    font-size: 1.1rem;
+  }
+
+  .producto__icono {
+    width: 30px;
+    height: 30px;
+  }
 }
