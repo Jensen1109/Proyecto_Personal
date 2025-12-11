@@ -1,0 +1,289 @@
+/* ==================== MEDIA QUERIES ==================== */
+
+/* Tablet (menos de 991px) */
+@media screen and (max-width: 991px) {
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-height: auto;
+        padding: 10px 0;
+    }
+
+    .contenedor__sidebar {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 0 15px;
+        gap: 5px;
+    }
+
+    .sidebar__titulo-principal {
+        font-size: 1.2rem;
+        padding: 10px;
+        margin-bottom: 0;
+    }
+
+    .sidebar__back {
+        padding: 10px;
+    }
+
+    .sidebar__link {
+        padding: 10px 15px;
+    }
+
+    .main {
+        padding: 20px;
+    }
+
+    .deudores {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        min-height: 400px;
+        padding: 20px;
+    }
+
+    .deudores__titulo {
+        font-size: 1.5rem;
+    }
+}
+
+/* Celular (menos de 768px) */
+@media screen and (max-width: 768px) {
+    .sidebar {
+        padding: 8px 0;
+    }
+
+    .contenedor__sidebar {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0 10px;
+        gap: 0;
+        overflow-x: auto;
+    }
+
+    .sidebar__back {
+        padding: 8px 10px;
+        font-size: 1rem;
+        flex-shrink: 0;
+    }
+
+    .sidebar__titulo-principal {
+        font-size: 1rem;
+        padding: 8px 10px;
+        margin-bottom: 0;
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+
+    .sidebar__titulo-principal br {
+        display: none;
+    }
+
+    .sidebar__link {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+
+    .main {
+        padding: 15px;
+        align-items: flex-start;
+    }
+
+    .deudores {
+        width: 100%;
+        height: auto;
+        min-height: auto;
+        padding: 20px 15px;
+    }
+
+    .deudores__titulo {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+    }
+
+    /* Tabla como cards en móvil */
+    .contenedor-tabla {
+        overflow: visible;
+    }
+
+    .deudores__tabla-head {
+        display: none;
+    }
+
+    .deudores__tabla-body {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        overflow: visible;
+    }
+
+    .deudores__item {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        padding: 15px;
+        border: 1px solid #eee;
+        border-radius: 12px;
+        background-color: #fff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .deudores__valor {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 5px 0;
+        text-align: left;
+    }
+
+    .deudores__valor::before {
+        content: attr(data-label);
+        font-weight: 600;
+        font-size: 0.75rem;
+        color: #888;
+        margin-bottom: 4px;
+        text-transform: uppercase;
+    }
+
+    /* Celda de abono ocupa toda la fila */
+    .deudores__abono-celda {
+        grid-column: 1 / -1;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 10px;
+        border-top: 1px solid #eee;
+        margin-top: 5px;
+    }
+
+    .deudores__input-abono {
+        flex: 1;
+        max-width: 150px;
+    }
+
+    /* Celda de acciones */
+    .deudores__acciones {
+        grid-column: 1 / -1;
+        display: flex;
+        justify-content: flex-end;
+        padding-top: 5px;
+    }
+
+    .deudores__footer {
+        margin-top: 15px;
+    }
+
+    .deudores__btn-agregar {
+        width: 100%;
+        padding: 15px;
+        font-size: 1rem;
+    }
+}
+
+/* Celular pequeño (menos de 425px) */
+@media screen and (max-width: 425px) {
+    .contenedor__sidebar {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .sidebar__back {
+        order: -1;
+        width: auto;
+    }
+
+    .sidebar__titulo-principal {
+        order: -1;
+        flex-grow: 1;
+        text-align: left;
+    }
+
+    .sidebar__link {
+        padding: 6px 10px;
+        font-size: 0.85rem;
+    }
+
+    .main {
+        padding: 10px;
+    }
+
+    .deudores {
+        padding: 15px 12px;
+        border-radius: 12px;
+    }
+
+    .deudores__titulo {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+
+    .deudores__item {
+        padding: 12px;
+        gap: 8px;
+    }
+
+    .deudores__valor {
+        font-size: 0.9rem;
+    }
+
+    .deudores__input-abono {
+        padding: 10px;
+    }
+
+    .deudores__btn-abonar {
+        padding: 10px 15px;
+    }
+}
+
+/* Celular muy pequeño (menos de 375px) */
+@media screen and (max-width: 375px) {
+    .contenedor__sidebar {
+        padding: 0 8px;
+    }
+
+    .sidebar__titulo-principal {
+        font-size: 0.9rem;
+        padding: 6px 8px;
+    }
+
+    .sidebar__link {
+        padding: 5px 8px;
+        font-size: 0.8rem;
+    }
+
+    .main {
+        padding: 8px;
+    }
+
+    .deudores {
+        padding: 12px 10px;
+    }
+
+    .deudores__titulo {
+        font-size: 1.2rem;
+    }
+
+    .deudores__item {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+
+    .deudores__abono-celda {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .deudores__input-abono {
+        width: 100%;
+        max-width: none;
+    }
+}

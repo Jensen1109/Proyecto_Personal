@@ -119,14 +119,10 @@ body {
     display: block;
     overflow-y: auto;
     flex: 1;
-    /* Ocultar scrollbar */
     scrollbar-width: none;
-    /* Firefox */
     -ms-overflow-style: none;
-    /* IE y Edge */
 }
 
-/* Ocultar scrollbar en Chrome, Safari y Opera */
 .deudores__tabla-body::-webkit-scrollbar {
     display: none;
 }
@@ -189,7 +185,6 @@ body {
     color: #aaa;
 }
 
-/* Ocultar flechas del input number */
 .deudores__input-abono::-webkit-outer-spin-button,
 .deudores__input-abono::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -255,126 +250,3 @@ body {
     background-color: #d5dbdb;
 }
 
-/* ==================== MEDIA QUERIES ==================== */
-
-/* Tablet (menos de 991px) */
-@media screen and (max-width: 991px) {
-    body {
-        flex-direction: column;
-    }
-
-    .sidebar {
-        width: 100%;
-        min-height: auto;
-        padding: 10px 0;
-    }
-
-    .contenedor__sidebar {
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: center;
-        padding: 0 15px;
-    }
-
-    .sidebar__titulo-principal {
-        font-size: 1.2rem;
-        padding: 10px;
-        margin-bottom: 0;
-    }
-
-    .sidebar__back {
-        padding: 10px;
-    }
-
-    .sidebar__link {
-        padding: 10px 15px;
-    }
-
-    .main {
-        padding: 20px;
-    }
-
-    .deudores {
-        padding: 20px;
-    }
-
-    .deudores__titulo {
-        font-size: 1.5rem;
-    }
-}
-
-/* Celular (menos de 768px) */
-@media screen and (max-width: 767px) {
-
-    .contenedor-tabla,
-    .deudores__tabla-head,
-    .deudores__tabla-body,
-    .deudores__tabla-head tr,
-    .deudores__item {
-        display: block;
-    }
-
-    .deudores__tabla-head {
-        display: none;
-    }
-
-    .deudores__item {
-        margin-bottom: 15px;
-        padding: 15px;
-        border: 1px solid #eee;
-        border-radius: 8px;
-        background-color: #fff;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    }
-
-    .deudores__valor {
-        display: flex;
-        justify-content: space-between;
-        padding: 8px 0;
-        border-bottom: 1px solid #f5f5f5;
-    }
-
-    .deudores__valor:last-child {
-        border-bottom: none;
-    }
-
-    .deudores__valor::before {
-        content: attr(data-label);
-        font-weight: 600;
-        color: #666;
-    }
-
-    .deudores__abono-celda {
-        flex-direction: column;
-        align-items: flex-end;
-        gap: 10px;
-    }
-
-    .deudores__input-abono {
-        width: 100%;
-    }
-
-    .deudores__acciones {
-        justify-content: flex-end;
-    }
-}
-
-/* Celular pequeño (menos de 480px) */
-@media screen and (max-width: 480px) {
-    .main {
-        padding: 10px;
-    }
-
-    .deudores {
-        padding: 15px;
-    }
-
-    .deudores__titulo {
-        font-size: 1.3rem;
-        margin-bottom: 20px;
-    }
-
-    .deudores__btn-agregar {
-        width: 100%;
-    }
-}
