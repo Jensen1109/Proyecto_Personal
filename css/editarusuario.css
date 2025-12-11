@@ -2,8 +2,8 @@
 /* Este archivo contiene los estilos para el formulario de edición de usuario */
 /* Incluye sidebar de navegación y formulario con campos de texto */
 
-/* Importa las variables CSS personalizadas desde el archivo de propiedades */
-@import url(custom/custompropertiers.css);
+/* Este archivo NO necesita importar las custom properties porque */
+/* ya se importan a través de styles.css */
 
 /* ==================== RESET BÁSICO ==================== */
 /* Elimina los estilos por defecto del navegador para consistencia */
@@ -34,7 +34,7 @@ body {
 .sidebar {
     width: 180px;
     /* Ancho fijo del sidebar */
-    background-color: #2C3E50;
+    background-color: var(--fondo-sidebar);
     /* Color azul oscuro de fondo */
     min-height: 100vh;
     /* Altura completa de la ventana */
@@ -146,7 +146,7 @@ body {
 .editar-usuario__titulo {
     font-size: 1.8rem;
     /* Tamaño grande */
-    color: #2C3E50;
+    color: var(--fondo-sidebar);
     /* Color azul oscuro corporativo */
     margin-bottom: 30px;
     /* Espacio debajo del título */
@@ -205,7 +205,7 @@ body {
 .editar-usuario__input:focus {
     outline: none;
     /* Elimina el outline por defecto del navegador */
-    border-color: #2C3E50;
+    border-color: var(--fondo-sidebar);
     /* Borde azul oscuro corporativo */
 }
 

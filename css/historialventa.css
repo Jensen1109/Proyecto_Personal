@@ -2,8 +2,8 @@
 /* Este archivo contiene los estilos para la visualización del historial de ventas */
 /* Incluye barra de búsqueda, tabla de ventas y estados de pago */
 
-/* Importa las variables CSS personalizadas desde el archivo de propiedades */
-@import url(custom/custompropertiers.css);
+/* Este archivo NO necesita importar las custom properties porque */
+/* ya se importan a través de styles.css */
 /* Importa estilos compartidos desde registroProducto */
 @import url(/css/registroProducto.css);
 
@@ -36,7 +36,7 @@ body {
 .sidebar {
     width: 180px;
     /* Ancho fijo del sidebar */
-    background-color: #2C3E50;
+    background-color: var(--fondo-sidebar);
     /* Color azul oscuro de fondo */
     min-height: 100vh;
     /* Altura completa de la ventana */
@@ -301,7 +301,7 @@ main {
 /* ==================== ESTADOS DE PAGO ==================== */
 /* Estado "Completado" - texto verde */
 .historial-venta__estado--completado {
-    color: #27ae60;
+    color: var(--color-exito);
     /* Verde */
     font-weight: 500;
     /* Texto semi-negrita */

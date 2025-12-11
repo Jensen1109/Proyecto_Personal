@@ -45,4 +45,18 @@
     /* Texto principal - azul grisáceo oscuro */
     --color-text-light: #7f8c8d;
     /* Texto secundario, íconos - gris medio */
+
+    /* ===== COLORES DE ESTADO ===== */
+    --color-exito: #27ae60;
+    /* Verde para éxito/confirmación */
+    --color-error: #e74c3c;
+    /* Rojo para error/eliminar */
+    --color-editar: #3498db;
+    /* Azul para editar/acciones */
+    --color-advertencia: #f39c12;
+    /* Naranja para advertencias */
+
+    /* ===== COLORES DE FONDO ALTERNATIVO ===== */
+    --fondo-alternativo: #f8f9fa;
+    /* Gris muy claro para filas alternas */
 }

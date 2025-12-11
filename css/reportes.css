@@ -2,8 +2,8 @@
 /* Este archivo contiene los estilos para la visualización de reportes de ganancias */
 /* Incluye barra de búsqueda, tabla de reportes y estilos de ganancias/pérdidas */
 
-/* Importa las variables CSS personalizadas desde el archivo de propiedades */
-@import url(custom/custompropertiers.css);
+/* Este archivo NO necesita importar las custom properties porque */
+/* ya se importan a través de styles.css */
 /* Importa estilos compartidos desde registroProducto */
 @import url(/css/registroProducto.css);
 
@@ -196,7 +196,7 @@ main {
 /* ==================== ESTILOS DE GANANCIAS ==================== */
 /* Ganancia positiva - texto verde */
 .reportes__ganancia--positiva {
-    color: #27ae60;
+    color: var(--color-exito);
     /* Verde */
     font-weight: 500;
     /* Texto semi-negrita */
@@ -204,7 +204,7 @@ main {
 
 /* Ganancia negativa (pérdida) - texto rojo */
 .reportes__ganancia--negativa {
-    color: #e74c3c;
+    color: var(--color-error);
     /* Rojo */
     font-weight: 500;
     /* Texto semi-negrita */

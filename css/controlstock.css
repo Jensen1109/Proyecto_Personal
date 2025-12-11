@@ -2,8 +2,8 @@
 /* Este archivo contiene los estilos para la gestión de inventario */
 /* Incluye tabla con filtros, barra de búsqueda y botones de acción */
 
-/* Importa las variables CSS personalizadas desde el archivo de propiedades */
-@import url(custom/custompropertiers.css);
+/* Este archivo NO necesita importar las custom properties porque */
+/* ya se importan a través de styles.css */
 /* Importa estilos compartidos desde registroProducto */
 @import url(/css/registroProducto.css);
 
@@ -189,19 +189,19 @@ main {
 
 /* Texto para stock "Bajo" - color amarillo/naranja */
 .control-filtro__texto--bajo {
-  color: #f39c12;
+  color: var(--color-advertencia);
   /* Amarillo/naranja de advertencia */
 }
 
 /* Texto para stock "Suficiente" - color verde */
 .control-filtro__texto--suficiente {
-  color: #27ae60;
+  color: var(--color-exito);
   /* Verde de éxito */
 }
 
 /* Texto para stock "Crítico" - color rojo */
 .control-filtro__texto--critico {
-  color: #e74c3c;
+  color: var(--color-error);
   /* Rojo de peligro */
 }
 

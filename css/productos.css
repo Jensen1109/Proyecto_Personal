@@ -213,7 +213,7 @@ body {
   /* Tamaño de fuente */
   font-weight: 600;
   /* Texto semi-negrita */
-  color: #2c3e50;
+  color: var(--fondo-sidebar);
   /* Azul oscuro */
   margin-bottom: 10px;
   /* Espacio debajo */
@@ -253,7 +253,7 @@ body {
   /* Tamaño grande */
   font-weight: 700;
   /* Texto negrita */
-  color: #27ae60;
+  color: var(--color-exito);
   /* Color verde (dinero) */
 }
 
@@ -296,7 +296,7 @@ body {
 }
 
 .producto__icono:has(.fa-pencil) {
-  background-color: #3498db;
+  background-color: var(--color-editar);
 }
 
 /* Icono de eliminar - fondo rojo */
@@ -305,5 +305,5 @@ body {
 }
 
 .producto__icono:has(.fa-trash) {
-  background-color: #e74c3c;
+  background-color: var(--color-error);
 }

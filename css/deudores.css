@@ -2,8 +2,8 @@
 /* Este archivo contiene los estilos para la gestión de deudores */
 /* Incluye tabla con scroll, inputs de abono y botones de acción */
 
-/* Importa las variables CSS personalizadas desde el archivo de propiedades */
-@import url(custom/custompropertiers.css);
+/* Este archivo NO necesita importar las custom properties porque */
+/* ya se importan a través de styles.css */
 
 /* ==================== RESET BÁSICO ==================== */
 /* Elimina los estilos por defecto del navegador para consistencia */
@@ -34,7 +34,7 @@ body {
 .sidebar {
     width: 180px;
     /* Ancho fijo del sidebar */
-    background-color: #2C3E50;
+    background-color: var(--fondo-sidebar);
     /* Color azul oscuro de fondo */
     min-height: 100vh;
     /* Altura completa de la ventana */
@@ -181,7 +181,7 @@ body {
 
 /* Encabezado de la tabla (thead) */
 .deudores__tabla-head {
-    background-color: #f8f9fa;
+    background-color: var(--fondo-alternativo);
     /* Fondo gris muy claro */
     display: table;
     /* Se comporta como tabla */
@@ -239,7 +239,7 @@ body {
 
 /* Efecto hover en las filas de datos */
 .deudores__tabla-body .deudores__item:hover {
-    background-color: #f8f9fa;
+    background-color: var(--fondo-alternativo);
     /* Fondo gris muy claro */
 }
 
@@ -273,7 +273,7 @@ body {
 .deudores__monto {
     font-weight: 600;
     /* Texto negrita */
-    color: #2C3E50;
+    color: var(--fondo-sidebar);
     /* Color azul oscuro corporativo */
 }
 
@@ -337,7 +337,7 @@ body {
 
 /* Botón de confirmar abono (check verde) */
 .deudores__btn-abonar {
-    background-color: #27ae60;
+    background-color: var(--color-exito);
     /* Verde */
     color: white;
     /* Texto blanco */
@@ -386,7 +386,7 @@ body {
 
 /* Efecto hover en el botón eliminar - se pone rojo */
 .deudores__btn-eliminar:hover {
-    color: #e74c3c;
+    color: var(--color-error);
     /* Rojo de peligro */
 }
 
